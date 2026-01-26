@@ -197,6 +197,63 @@ const currentPath = Astro.url.pathname;
             </div>
           </div>
 
+          <!-- Solutions -->
+          <div class="relative group">
+            <button 
+              class={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
+                currentPath.startsWith('/solutions')
+                  ? 'text-primary-700 bg-primary-50'
+                  : 'text-gray-700 hover:text-primary-700 hover:bg-gray-50'
+              }`}
+            >
+              Solutions
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            
+            <!-- Solutions Mega Menu Dropdown -->
+            <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 w-[500px]">
+                <div class="grid grid-cols-2 gap-3">
+                  <a href="/solutions#garden-centers" class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
+                    <h4 class="font-semibold text-gray-900 text-sm">Garden Centers</h4>
+                    <p class="text-xs text-gray-500">Premium trees for retail</p>
+                  </a>
+                  <a href="/solutions#supermarkets" class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
+                    <h4 class="font-semibold text-gray-900 text-sm">Supermarket Chains</h4>
+                    <p class="text-xs text-gray-500">High volume, multi-location</p>
+                  </a>
+                  <a href="/solutions#distributors" class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
+                    <h4 class="font-semibold text-gray-900 text-sm">Distributors</h4>
+                    <p class="text-xs text-gray-500">Wholesale partnerships</p>
+                  </a>
+                  <a href="/solutions#nurseries" class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
+                    <h4 class="font-semibold text-gray-900 text-sm">Plant Schools</h4>
+                    <p class="text-xs text-gray-500">Industry professionals</p>
+                  </a>
+                  <a href="/solutions#ecommerce" class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
+                    <h4 class="font-semibold text-gray-900 text-sm">E-Commerce</h4>
+                    <p class="text-xs text-gray-500">Online retailers</p>
+                  </a>
+                  <a href="/solutions#commercial" class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
+                    <h4 class="font-semibold text-gray-900 text-sm">Commercial</h4>
+                    <p class="text-xs text-gray-500">Hotels, events, corporate</p>
+                  </a>
+                </div>
+                
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                  <a href="/solutions" class="flex items-center justify-between text-sm text-primary-600 font-medium hover:text-primary-700">
+                    View all solutions
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- About -->
           <a 
             href="/about" 
@@ -265,6 +322,7 @@ const currentPath = Astro.url.pathname;
       </div>
       
       <a href="/services" class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">Services</a>
+      <a href="/solutions" class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">Solutions</a>
       <a href="/about" class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">About</a>
       <a href="/contact" class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">Contact</a>
       
