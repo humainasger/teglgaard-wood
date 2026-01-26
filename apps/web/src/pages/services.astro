@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { BUSINESS_INFO } from '../constants/business'
-import { ProcessSteps } from '../components/motion/ProcessSteps'
+import { ProcessStepsScroll } from '../components/motion/ProcessStepsScroll'
 import { CapabilitiesGrid } from '../components/motion/CapabilitiesGrid'
 
 const markets = BUSINESS_INFO.primaryMarkets
@@ -93,20 +93,20 @@ const countryFlags: Record<string, string> = {
   </section>
 
   <!-- Process Section -->
-  <section id="process" class="py-24 lg:py-32 bg-gray-50">
+  <section id="process" class="py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
     <div class="max-w-screen-xl mx-auto px-4">
-      <div class="text-center mb-16">
+      <div class="text-center mb-16 lg:mb-24">
         <span class="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-4 block">Our Process</span>
         <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
           From Grower to Your Store
         </h2>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           A streamlined process built on decades of experience.
-          Click each step to learn more.
+          Scroll to explore each step.
         </p>
       </div>
 
-      <ProcessSteps client:visible />
+      <ProcessStepsScroll client:visible />
     </div>
   </section>
 
