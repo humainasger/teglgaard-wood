@@ -1,24 +1,25 @@
 # Teglgaard Wood - Build Progress
 
 **Last Updated:** 2026-01-26
-**Session:** Phase 1 Complete + Enhancements
+**Session:** Phase 1 Complete + Visual Enhancement
 
 ---
 
 ## What's Built
 
-### Core Pages (8 total)
+### Core Pages (9 total)
 
 | Page | Route | Status | Notes |
 |------|-------|--------|-------|
 | Homepage | `/` | ✅ Complete | Hero with video bg, products, why us, delivery, CTA |
-| Products Index | `/products` | ✅ Complete | Overview linking to trees & greenery |
-| Christmas Trees | `/products/christmas-trees` | ✅ Complete | Species, sizes, grades, packaging |
-| Greenery | `/products/greenery` | ✅ Complete | Products, applications, packaging |
-| Services | `/services` | ✅ Complete | Process flow, capabilities, delivery |
+| Products Index | `/products` | ✅ Enhanced | Image hero, product cards with real images |
+| Christmas Trees | `/products/christmas-trees` | ✅ Enhanced | Image hero, species cards with photos |
+| Greenery | `/products/greenery` | ✅ Enhanced | Image hero, applications with photos |
+| Services | `/services` | ✅ Enhanced | Operations photo hero, capabilities |
 | Solutions | `/solutions` | ✅ Complete | 6 customer segments with images, sticky nav |
-| About | `/about` | ✅ Complete | Who we are, approach, leadership, company facts |
+| About | `/about` | ✅ Enhanced | Image hero, team photos for all 3 members |
 | Contact | `/contact` | ✅ Complete | Gold team section, smart multi-step form |
+| 404 | `/404` | ✅ New | Custom 404 with tree illustration |
 
 ### Components
 
@@ -32,20 +33,33 @@
 | Counter | ✅ Complete | Animated number counter |
 | Custom Icons | ✅ Complete | TreeIcon, GreeneryIcon, TruckIcon, QualityIcon, NetworkIcon, TeamIcon |
 
-### Generated Images
+### Generated Images (20 total)
 
-All images generated with Gemini 2K resolution:
+All images optimized with JPG fallback + WebP. Total: ~8.4MB WebP / ~50MB JPG fallback.
 
-**Homepage & Products:**
+**Core Images:**
 - `/images/hero-fallback.jpg` - Aerial Danish plantation
 - `/images/products-trees.jpg` - Premium Nordmann fir
 - `/images/products-greenery.jpg` - Fresh cut branches
+- `/images/operations.jpg` - Production team at work
 
-**Team Avatars:**
+**Team Photos (3):**
 - `/images/team/michael.jpg` - Placeholder for Michael
+- `/images/team/rasmus.jpg` - Placeholder for Rasmus
 - `/images/team/asger.jpg` - Placeholder for Asger
 
-**Solutions (6 images):**
+**Species Images (4):**
+- `/images/species/nordmann.jpg` - Nordmann fir
+- `/images/species/noble.jpg` - Noble fir
+- `/images/species/fraser.jpg` - Fraser fir
+- `/images/species/norway-spruce.jpg` - Norway Spruce
+
+**Greenery Applications (3):**
+- `/images/greenery/wreaths.jpg` - Christmas wreath
+- `/images/greenery/cemetery.jpg` - Grave decoration
+- `/images/greenery/commercial.jpg` - Hotel lobby decoration
+
+**Solutions (6):**
 - `/images/solutions/garden-centers.jpg` - Retail display
 - `/images/solutions/supermarkets.jpg` - High-volume retail
 - `/images/solutions/distributors.jpg` - Warehouse logistics
@@ -65,9 +79,11 @@ All images generated with Gemini 2K resolution:
 - Headings: Bold, tight leading
 - Body: Regular, relaxed leading
 
-**Spacing:**
-- Sections: `py-24 lg:py-32` (generous whitespace)
-- Section labels: Uppercase, tracking-wider, primary-600
+**Image Strategy:**
+- All images have WebP + JPG versions
+- `<picture>` element with WebP source for modern browsers
+- JPG fallback for older browsers
+- Lazy loading on below-fold images
 
 ---
 
@@ -142,16 +158,24 @@ apps/web/
 │   ├── layouts/         # Layout.astro
 │   └── styles/          # global.css (Tailwind theme)
 ├── public/
-│   └── images/          # All generated images
+│   ├── favicon.svg      # Tree icon favicon
+│   └── images/          # All optimized images
+│       ├── species/     # Tree species photos
+│       ├── greenery/    # Application photos
+│       ├── solutions/   # Customer segment photos
+│       └── team/        # Team member photos
 └── package.json
 ```
 
-### Image Optimization Note
+### Image Optimization
 
-Generated images are ~5-7MB each. Before production:
-1. Compress with squoosh or similar
-2. Generate WebP versions
-3. Consider Astro's built-in image optimization
+Images compressed and converted using:
+- `jpegoptim` - JPEG compression (quality 85)
+- `cwebp` - WebP conversion (quality 82)
+- `sips` - macOS image processing
+
+Original generated images: ~65MB
+After optimization: JPG ~50MB, WebP ~8.4MB
 
 ---
 
@@ -163,15 +187,24 @@ Generated images are ~5-7MB each. Before production:
 4. Add gold 'Talk to Us Directly' section with team avatars
 5. Upgrade Solutions page with images and sticky sub-navigation
 6. Fix: Padding adjustments on solutions sub-nav
+7. **Image optimization** - Compressed all images, generated WebP versions
+8. **Created favicon.svg** - Tree icon in brand green
+9. **Created 404 page** - Custom error page with navigation
+10. **Visual enhancement pass:**
+    - Added image heroes to Products, Trees, Greenery, Services, About pages
+    - Added species images to Christmas Trees page
+    - Added application images to Greenery page
+    - Added Rasmus team photo to About page
+    - Generated operations image for Services page
 
 ---
 
 ## Recommended Next Steps
 
 ### Immediate (Easy Wins)
-1. **Image optimization** - Compress all images for faster load
-2. **Favicon** - Create proper favicon.svg with tree icon
-3. **404 page** - Create custom 404 page
+1. ~~**Image optimization** - Compress all images for faster load~~ ✅ Done
+2. ~~**Favicon** - Create proper favicon.svg with tree icon~~ ✅ Done
+3. ~~**404 page** - Create custom 404 page~~ ✅ Done
 4. **Meta images** - Create proper og-image.jpg for social sharing
 
 ### Short-term

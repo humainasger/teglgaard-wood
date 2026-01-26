@@ -8,8 +8,21 @@ import { BUSINESS_INFO, TREE_SPECIES, QUALITY_GRADES } from '../../constants/bus
   description="Premium wholesale Christmas trees. Nordmann Fir, Noble Fir, Fraser Fir, Norway Spruce. All sizes 1m-7m+. Premium, A-Grade, Standard quality. European delivery."
 >
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-primary-700 to-primary-600 py-16 lg:py-20">
-    <div class="max-w-screen-xl mx-auto px-4">
+  <section class="relative py-24 lg:py-32 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <picture>
+        <source srcset="/images/products-trees.webp" type="image/webp" />
+        <img 
+          src="/images/products-trees.jpg" 
+          alt="Premium Christmas trees" 
+          class="w-full h-full object-cover"
+        />
+      </picture>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-800/80 to-primary-700/60"></div>
+    </div>
+    
+    <div class="relative max-w-screen-xl mx-auto px-4">
       <nav class="mb-6">
         <ol class="flex items-center text-sm text-primary-200">
           <li><a href="/" class="hover:text-white">Home</a></li>
@@ -43,32 +56,55 @@ import { BUSINESS_INFO, TREE_SPECIES, QUALITY_GRADES } from '../../constants/bus
       </div>
 
       <div class="grid md:grid-cols-2 gap-8">
-        {Object.entries(TREE_SPECIES).map(([key, species]) => (
-          <div class="bg-gray-50 rounded-xl p-6 lg:p-8">
-            <div class="flex items-start justify-between mb-4">
-              <div>
-                <h3 class="text-xl font-bold text-gray-900">{species.name}</h3>
-                <p class="text-sm text-gray-500 italic">{species.scientificName}</p>
-              </div>
-              {key === 'nordmann' && (
-                <span class="bg-primary-100 text-primary-700 text-xs font-semibold px-3 py-1 rounded-full">
-                  Most Popular
-                </span>
-              )}
-            </div>
-            <p class="text-gray-600 mb-6">{species.description}</p>
-            <div>
-              <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Sizes Available</h4>
-              <div class="flex flex-wrap gap-2">
-                {species.sizes.map((size) => (
-                  <span class="bg-white px-3 py-1 rounded text-sm text-gray-700 border border-gray-200">
-                    {size}
+        {Object.entries(TREE_SPECIES).map(([key, species]) => {
+          const imageMap: Record<string, string> = {
+            nordmann: 'nordmann',
+            noble: 'noble', 
+            fraser: 'fraser',
+            spruce: 'norway-spruce'
+          }
+          const imageName = imageMap[key] || key
+          
+          return (
+            <div class="bg-gray-50 rounded-xl overflow-hidden">
+              <!-- Species Image -->
+              <div class="aspect-[4/3] relative overflow-hidden">
+                <picture>
+                  <source srcset={`/images/species/${imageName}.webp`} type="image/webp" />
+                  <img 
+                    src={`/images/species/${imageName}.jpg`}
+                    alt={species.name}
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </picture>
+                {key === 'nordmann' && (
+                  <span class="absolute top-4 right-4 bg-primary-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    Most Popular
                   </span>
-                ))}
+                )}
+              </div>
+              
+              <div class="p-6 lg:p-8">
+                <div class="mb-4">
+                  <h3 class="text-xl font-bold text-gray-900">{species.name}</h3>
+                  <p class="text-sm text-gray-500 italic">{species.scientificName}</p>
+                </div>
+                <p class="text-gray-600 mb-6">{species.description}</p>
+                <div>
+                  <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Sizes Available</h4>
+                  <div class="flex flex-wrap gap-2">
+                    {species.sizes.map((size) => (
+                      <span class="bg-white px-3 py-1 rounded text-sm text-gray-700 border border-gray-200">
+                        {size}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   </section>

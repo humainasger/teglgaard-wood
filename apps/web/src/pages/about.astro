@@ -10,8 +10,21 @@ const { leadership } = BUSINESS_INFO
   description="Teglgaard Wood is a professional Christmas tree and greenery sourcing partner with 50 years of industry expertise. Production team in Denmark, European grower network."
 >
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-primary-700 to-primary-600 py-16 lg:py-20">
-    <div class="max-w-screen-xl mx-auto px-4">
+  <section class="relative py-24 lg:py-32 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <picture>
+        <source srcset="/images/hero-fallback.webp" type="image/webp" />
+        <img 
+          src="/images/hero-fallback.jpg" 
+          alt="Danish Christmas tree plantation" 
+          class="w-full h-full object-cover"
+        />
+      </picture>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-800/80 to-primary-700/60"></div>
+    </div>
+    
+    <div class="relative max-w-screen-xl mx-auto px-4">
       <div class="max-w-3xl">
         <h1 class="text-4xl lg:text-5xl font-bold text-white mb-6">About Teglgaard Wood</h1>
         <p class="text-xl text-primary-100">
@@ -123,10 +136,16 @@ const { leadership } = BUSINESS_INFO
       <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
         <!-- Michael -->
         <div class="text-center">
-          <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center">
-            <svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-            </svg>
+          <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
+            <picture>
+              <source srcset="/images/team/michael.webp" type="image/webp" />
+              <img 
+                src="/images/team/michael.jpg" 
+                alt={leadership.michael.name}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-1">{leadership.michael.name}</h3>
           <p class="text-primary-600 font-medium mb-3">{leadership.michael.role}</p>
@@ -135,10 +154,16 @@ const { leadership } = BUSINESS_INFO
 
         <!-- Rasmus -->
         <div class="text-center">
-          <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center">
-            <svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-            </svg>
+          <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
+            <picture>
+              <source srcset="/images/team/rasmus.webp" type="image/webp" />
+              <img 
+                src="/images/team/rasmus.jpg" 
+                alt={leadership.rasmus.name}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-1">{leadership.rasmus.name}</h3>
           <p class="text-primary-600 font-medium mb-3">{leadership.rasmus.role}</p>
@@ -147,10 +172,16 @@ const { leadership } = BUSINESS_INFO
 
         <!-- Asger -->
         <div class="text-center">
-          <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 flex items-center justify-center">
-            <svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-            </svg>
+          <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
+            <picture>
+              <source srcset="/images/team/asger.webp" type="image/webp" />
+              <img 
+                src="/images/team/asger.jpg" 
+                alt={leadership.asger.name}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-1">{leadership.asger.name}</h3>
           <p class="text-primary-600 font-medium mb-3">{leadership.asger.role}</p>

@@ -8,8 +8,21 @@ import { BUSINESS_INFO, GREENERY_PRODUCTS } from '../../constants/business'
   description="Fresh-cut decorative greenery for wholesale buyers. Noble fir, Nordmann, cypress varieties, spruce. For wreaths, cemetery arrangements, commercial decorating."
 >
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-primary-700 to-primary-600 py-16 lg:py-20">
-    <div class="max-w-screen-xl mx-auto px-4">
+  <section class="relative py-24 lg:py-32 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <picture>
+        <source srcset="/images/products-greenery.webp" type="image/webp" />
+        <img 
+          src="/images/products-greenery.jpg" 
+          alt="Fresh decorative greenery" 
+          class="w-full h-full object-cover"
+        />
+      </picture>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-800/80 to-primary-700/60"></div>
+    </div>
+    
+    <div class="relative max-w-screen-xl mx-auto px-4">
       <nav class="mb-6">
         <ol class="flex items-center text-sm text-primary-200">
           <li><a href="/" class="hover:text-white">Home</a></li>
@@ -75,41 +88,68 @@ import { BUSINESS_INFO, GREENERY_PRODUCTS } from '../../constants/business'
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
-        <div class="text-center">
-          <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-            </svg>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Wreaths -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <div class="aspect-[4/3] relative overflow-hidden">
+            <picture>
+              <source srcset="/images/greenery/wreaths.webp" type="image/webp" />
+              <img 
+                src="/images/greenery/wreaths.jpg" 
+                alt="Christmas wreath made with fresh Noble fir" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </picture>
           </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Wreaths & Decorations</h3>
-          <p class="text-gray-600 text-sm">
-            Premium foliage for handcrafted wreaths, garlands, and holiday decorations.
-          </p>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Wreaths & Decorations</h3>
+            <p class="text-gray-600 text-sm">
+              Premium foliage for handcrafted wreaths, garlands, and holiday decorations.
+            </p>
+          </div>
         </div>
 
-        <div class="text-center">
-          <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"></path>
-            </svg>
+        <!-- Cemetery -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <div class="aspect-[4/3] relative overflow-hidden">
+            <picture>
+              <source srcset="/images/greenery/cemetery.webp" type="image/webp" />
+              <img 
+                src="/images/greenery/cemetery.jpg" 
+                alt="Traditional cemetery grave decoration" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </picture>
           </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Cemetery Arrangements</h3>
-          <p class="text-gray-600 text-sm">
-            Traditional and modern grave decorations. Popular in Central Europe markets.
-          </p>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Cemetery Arrangements</h3>
+            <p class="text-gray-600 text-sm">
+              Traditional and modern grave decorations. Popular in Central Europe markets.
+            </p>
+          </div>
         </div>
 
-        <div class="text-center">
-          <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-            </svg>
+        <!-- Commercial -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <div class="aspect-[4/3] relative overflow-hidden">
+            <picture>
+              <source srcset="/images/greenery/commercial.webp" type="image/webp" />
+              <img 
+                src="/images/greenery/commercial.jpg" 
+                alt="Grand hotel lobby decorated with Christmas greenery" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </picture>
           </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Commercial Decorating</h3>
-          <p class="text-gray-600 text-sm">
-            Large-scale greenery for hotels, shopping centers, and corporate events.
-          </p>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Commercial Decorating</h3>
+            <p class="text-gray-600 text-sm">
+              Large-scale greenery for hotels, shopping centers, and corporate events.
+            </p>
+          </div>
         </div>
       </div>
     </div>

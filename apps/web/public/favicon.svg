@@ -1,0 +1,11 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="16" fill="#2D5A3D"/>
+  <!-- Christmas Tree -->
+  <path 
+    d="M16 5L10 13h3l-4 7h4l-5 9h16l-5-9h4l-4-7h3L16 5z" 
+    fill="white"
+  />
+  <!-- Trunk -->
+  <rect x="14" y="28" width="4" height="2" rx="0.5" fill="white" opacity="0.8"/>
+</svg>
