@@ -1,0 +1,37 @@
+---
+interface Props {
+  class?: string
+  size?: number
+}
+
+const { class: className = '', size = 24 } = Astro.props
+---
+
+<svg 
+  class={className}
+  width={size} 
+  height={size} 
+  viewBox="0 0 48 48" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Truck bed -->
+  <rect x="4" y="16" width="24" height="16" rx="2" fill="currentColor" opacity="0.9"/>
+  <!-- Cabin -->
+  <path 
+    d="M28 20h8a4 4 0 014 4v8H28V20z" 
+    fill="currentColor" 
+    opacity="0.7"
+  />
+  <!-- Window -->
+  <rect x="30" y="22" width="8" height="5" rx="1" fill="currentColor" opacity="0.3"/>
+  <!-- Wheels -->
+  <circle cx="12" cy="34" r="4" fill="currentColor"/>
+  <circle cx="36" cy="34" r="4" fill="currentColor"/>
+  <circle cx="12" cy="34" r="2" fill="currentColor" opacity="0.3"/>
+  <circle cx="36" cy="34" r="2" fill="currentColor" opacity="0.3"/>
+  <!-- Trees in back -->
+  <path d="M8 16l4-6 4 6H8z" fill="currentColor" opacity="0.5"/>
+  <path d="M14 16l4-6 4 6H14z" fill="currentColor" opacity="0.5"/>
+  <path d="M20 16l4-6 4 6H20z" fill="currentColor" opacity="0.5"/>
+</svg>

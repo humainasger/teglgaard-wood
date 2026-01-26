@@ -2,36 +2,64 @@
 import Layout from '../layouts/Layout.astro'
 import Counter from '../components/Counter.tsx'
 import ScrollReveal from '../components/ScrollReveal.tsx'
+import TreeIcon from '../components/icons/TreeIcon.astro'
+import GreeneryIcon from '../components/icons/GreeneryIcon.astro'
+import TruckIcon from '../components/icons/TruckIcon.astro'
+import QualityIcon from '../components/icons/QualityIcon.astro'
+import NetworkIcon from '../components/icons/NetworkIcon.astro'
+import TeamIcon from '../components/icons/TeamIcon.astro'
 import { BUSINESS_INFO } from '../constants/business'
 
 const markets = BUSINESS_INFO.primaryMarkets
 ---
 
 <Layout title="Wholesale Christmas Trees & Decorative Greenery">
-  <!-- Hero Section -->
-  <section class="relative bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600 overflow-hidden">
-    <!-- Decorative background -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-20 left-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-      <div class="absolute bottom-10 right-20 w-80 h-80 bg-white rounded-full blur-3xl"></div>
-    </div>
+  <!-- Hero Section with Video Background -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+    <!-- Video Background -->
+    <video 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+      poster="/images/hero-fallback.jpg"
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+      <source src="/videos/hero-trees.mp4" type="video/mp4" />
+    </video>
     
-    <div class="relative max-w-screen-xl mx-auto px-4 py-20 lg:py-32">
+    <!-- Fallback Image (shows if video fails or for static export) -->
+    <div 
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/images/hero-fallback.jpg');"
+    ></div>
+    
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-800/80 to-primary-700/70"></div>
+    
+    <!-- Content -->
+    <div class="relative max-w-screen-xl mx-auto px-4 py-20 lg:py-32 w-full">
       <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-          Wholesale Christmas Trees<br />
-          & Decorative Greenery
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
+          <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+          <span class="text-white/90 text-sm font-medium">Now booking for Season 2026</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8">
+          Wholesale<br />
+          Christmas Trees<br />
+          <span class="text-primary-300">&amp; Greenery</span>
         </h1>
         
-        <p class="text-xl text-white/90 mb-8 max-w-2xl">
+        <p class="text-xl lg:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed">
           {BUSINESS_INFO.stats.treesAnnually} trees annually. Production team in Denmark.
-          Delivering to retailers across Europe.
+          Delivering to retailers across Europe since 1976.
         </p>
         
-        <div class="flex flex-col sm:flex-row gap-4 mb-12">
+        <div class="flex flex-col sm:flex-row gap-4 mb-16">
           <a 
             href="/products" 
-            class="inline-flex justify-center items-center px-6 py-3 bg-white text-primary-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+            class="inline-flex justify-center items-center px-8 py-4 bg-white text-primary-700 font-semibold rounded-xl hover:bg-gray-100 transition-all hover:shadow-lg text-lg"
           >
             View Products
             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,107 +68,156 @@ const markets = BUSINESS_INFO.primaryMarkets
           </a>
           <a 
             href="/contact" 
-            class="inline-flex justify-center items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-700 transition-colors"
+            class="inline-flex justify-center items-center px-8 py-4 border-2 border-white/80 text-white font-semibold rounded-xl hover:bg-white hover:text-primary-700 transition-all text-lg"
           >
             Request Quote
           </a>
         </div>
         
-        <!-- Trust Indicators -->
-        <div class="flex flex-wrap gap-6 text-white/80 text-sm">
-          <div class="flex items-center">
-            <svg class="w-5 h-5 mr-2 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            50 Years Experience
+        <!-- Trust Stats -->
+        <div class="flex flex-wrap gap-8 lg:gap-12">
+          <div>
+            <div class="text-4xl lg:text-5xl font-bold text-white">{BUSINESS_INFO.stats.treesAnnually}</div>
+            <div class="text-white/60 text-sm mt-1">trees annually</div>
           </div>
-          <div class="flex items-center">
-            <svg class="w-5 h-5 mr-2 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path>
-            </svg>
-            European Network
+          <div>
+            <div class="text-4xl lg:text-5xl font-bold text-white">50+</div>
+            <div class="text-white/60 text-sm mt-1">years experience</div>
           </div>
-          <div class="flex items-center">
-            <svg class="w-5 h-5 mr-2 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            Danish Production
+          <div>
+            <div class="text-4xl lg:text-5xl font-bold text-white">6+</div>
+            <div class="text-white/60 text-sm mt-1">European markets</div>
           </div>
         </div>
       </div>
     </div>
     
-    <!-- Wave Separator -->
-    <div class="absolute bottom-0 left-0 right-0">
-      <svg class="w-full h-16 lg:h-24 text-white" preserveAspectRatio="none" viewBox="0 0 1440 74" fill="currentColor">
-        <path d="M0,32 C360,64 720,0 1080,32 C1260,48 1380,16 1440,32 L1440,74 L0,74 Z"></path>
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
       </svg>
     </div>
   </section>
 
   <!-- Products Section -->
-  <section class="bg-white py-16 lg:py-24">
+  <section class="bg-white py-24 lg:py-32">
     <div class="max-w-screen-xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Products</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-4">Our Products</span>
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">What We Supply</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           Premium Christmas trees and fresh decorative greenery for retailers across Europe.
         </p>
       </div>
       
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
         <!-- Christmas Trees Card -->
         <ScrollReveal client:visible delay={0}>
-          <a href="/products/christmas-trees" class="group block">
-            <div class="bg-gray-50 rounded-2xl p-8 h-full border-2 border-transparent hover:border-primary-200 transition-all hover:shadow-lg">
-              <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-200 transition-colors">
-                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3L4 15h5v6h6v-6h5L12 3z"></path>
-                </svg>
+          <a href="/products/christmas-trees" class="group block h-full">
+            <div class="relative bg-gray-50 rounded-3xl overflow-hidden h-full border border-gray-100 hover:border-primary-200 transition-all hover:shadow-2xl">
+              <!-- Image Placeholder -->
+              <div class="aspect-[4/3] bg-gradient-to-br from-primary-100 to-primary-50 flex items-center justify-center">
+                <img 
+                  src="/images/products-trees.jpg" 
+                  alt="Christmas Trees" 
+                  class="w-full h-full object-cover"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                />
+                <div class="hidden items-center justify-center absolute inset-0">
+                  <TreeIcon class="text-primary-200" size={120} />
+                </div>
               </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Christmas Trees</h3>
-              <p class="text-gray-600 mb-4">
-                Nordmann Fir, Noble Fir, Fraser Fir, Norway Spruce. All sizes from 1m to 7m+.
-              </p>
-              <ul class="text-sm text-gray-500 space-y-1 mb-6">
-                <li>Premium, A-Grade & Standard</li>
-                <li>Netted & palletized</li>
-                <li>Custom labeling available</li>
-              </ul>
-              <span class="inline-flex items-center text-primary-600 font-medium group-hover:text-primary-700">
-                View Range
-                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </span>
+              
+              <div class="p-8 lg:p-10">
+                <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary-700 transition-colors">
+                  Christmas Trees
+                </h3>
+                <p class="text-gray-600 mb-6 text-lg">
+                  Nordmann Fir, Noble Fir, Fraser Fir, Norway Spruce. All sizes from 1m to 7m+.
+                </p>
+                <ul class="text-gray-500 space-y-2 mb-8">
+                  <li class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Premium, A-Grade &amp; Standard
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Netted &amp; palletized
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Private label available
+                  </li>
+                </ul>
+                <span class="inline-flex items-center text-primary-600 font-semibold text-lg group-hover:gap-3 gap-2 transition-all">
+                  View Christmas Trees
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
+              </div>
             </div>
           </a>
         </ScrollReveal>
 
         <!-- Greenery Card -->
-        <ScrollReveal client:visible delay={100}>
-          <a href="/products/greenery" class="group block">
-            <div class="bg-gray-50 rounded-2xl p-8 h-full border-2 border-transparent hover:border-primary-200 transition-all hover:shadow-lg">
-              <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-200 transition-colors">
-                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                </svg>
+        <ScrollReveal client:visible delay={150}>
+          <a href="/products/greenery" class="group block h-full">
+            <div class="relative bg-gray-50 rounded-3xl overflow-hidden h-full border border-gray-100 hover:border-primary-200 transition-all hover:shadow-2xl">
+              <!-- Image Placeholder -->
+              <div class="aspect-[4/3] bg-gradient-to-br from-primary-100 to-primary-50 flex items-center justify-center">
+                <img 
+                  src="/images/products-greenery.jpg" 
+                  alt="Decorative Greenery" 
+                  class="w-full h-full object-cover"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                />
+                <div class="hidden items-center justify-center absolute inset-0">
+                  <GreeneryIcon class="text-primary-200" size={120} />
+                </div>
               </div>
-              <h3 class="text-2xl font-bold text-gray-900 mb-3">Decorative Greenery</h3>
-              <p class="text-gray-600 mb-4">
-                Noble Fir, Nordmann, Cypress varieties, Spruce. Fresh-cut for the holiday season.
-              </p>
-              <ul class="text-sm text-gray-500 space-y-1 mb-6">
-                <li>Wreaths & decorations</li>
-                <li>Cemetery/grave arrangements</li>
-                <li>Commercial decorating</li>
-              </ul>
-              <span class="inline-flex items-center text-primary-600 font-medium group-hover:text-primary-700">
-                View Range
-                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </span>
+              
+              <div class="p-8 lg:p-10">
+                <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary-700 transition-colors">
+                  Decorative Greenery
+                </h3>
+                <p class="text-gray-600 mb-6 text-lg">
+                  Noble Fir, Nordmann, Cypress varieties, Spruce. Fresh-cut for the holiday season.
+                </p>
+                <ul class="text-gray-500 space-y-2 mb-8">
+                  <li class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Wreaths &amp; decorations
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Cemetery arrangements
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Commercial decorating
+                  </li>
+                </ul>
+                <span class="inline-flex items-center text-primary-600 font-semibold text-lg group-hover:gap-3 gap-2 transition-all">
+                  View Greenery
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
+              </div>
             </div>
           </a>
         </ScrollReveal>
@@ -149,67 +226,60 @@ const markets = BUSINESS_INFO.primaryMarkets
   </section>
 
   <!-- Why Teglgaard Wood Section -->
-  <section class="bg-gray-50 py-16 lg:py-24">
+  <section class="bg-gray-50 py-24 lg:py-32">
     <div class="max-w-screen-xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Why Teglgaard Wood</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-4">Why Choose Us</span>
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Why Teglgaard Wood</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           Your professional sourcing partner with production capabilities and European reach.
         </p>
       </div>
       
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
         <ScrollReveal client:visible delay={0}>
-          <div class="text-center">
-            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-              </svg>
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-20 h-20 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <TeamIcon class="text-primary-600" size={44} />
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Production Team</h3>
-            <p class="text-gray-600 text-sm">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Production Team</h3>
+            <p class="text-gray-600">
               Experienced team on the ground in Denmark. {BUSINESS_INFO.stats.seasonalWorkers} seasonal workers for grading and preparation.
             </p>
           </div>
         </ScrollReveal>
 
         <ScrollReveal client:visible delay={100}>
-          <div class="text-center">
-            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-20 h-20 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <NetworkIcon class="text-primary-600" size={44} />
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">European Network</h3>
-            <p class="text-gray-600 text-sm">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">European Network</h3>
+            <p class="text-gray-600">
               Growers across Europe. We source the right trees for your market, not just from Denmark.
             </p>
           </div>
         </ScrollReveal>
 
         <ScrollReveal client:visible delay={200}>
-          <div class="text-center">
-            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
-              </svg>
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-20 h-20 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <TruckIcon class="text-primary-600" size={44} />
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Reliable Logistics</h3>
-            <p class="text-gray-600 text-sm">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Reliable Logistics</h3>
+            <p class="text-gray-600">
               Best-in-class logistics partners. Full truck loads, mixed loads, day-to-day delivery.
             </p>
           </div>
         </ScrollReveal>
 
         <ScrollReveal client:visible delay={300}>
-          <div class="text-center">
-            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-20 h-20 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <QualityIcon class="text-primary-600" size={44} />
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">50 Years Experience</h3>
-            <p class="text-gray-600 text-sm">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">50 Years Experience</h3>
+            <p class="text-gray-600">
               Since 1976. {BUSINESS_INFO.stats.totalExported} trees exported. Deep industry knowledge.
             </p>
           </div>
@@ -219,20 +289,21 @@ const markets = BUSINESS_INFO.primaryMarkets
   </section>
 
   <!-- Delivery Coverage Section -->
-  <section class="bg-white py-16 lg:py-24">
+  <section class="bg-white py-24 lg:py-32">
     <div class="max-w-screen-xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Delivering Across Europe</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-4">Delivery</span>
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Delivering Across Europe</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           We supply garden centers, supermarket chains, and distributors in key European markets.
         </p>
       </div>
       
       <!-- Market Flags -->
-      <div class="flex flex-wrap justify-center gap-4 lg:gap-8 mb-12">
+      <div class="flex flex-wrap justify-center gap-4 lg:gap-6 mb-16">
         {markets.map((market) => (
-          <div class="flex items-center bg-gray-50 rounded-lg px-4 py-3">
-            <span class="text-2xl mr-2">
+          <div class="flex items-center bg-gray-50 rounded-xl px-6 py-4 hover:bg-primary-50 transition-colors">
+            <span class="text-4xl mr-4">
               {market === 'Germany' && '🇩🇪'}
               {market === 'France' && '🇫🇷'}
               {market === 'United Kingdom' && '🇬🇧'}
@@ -240,84 +311,92 @@ const markets = BUSINESS_INFO.primaryMarkets
               {market === 'Belgium' && '🇧🇪'}
               {market === 'Denmark' && '🇩🇰'}
             </span>
-            <span class="font-medium text-gray-700">{market}</span>
+            <span class="font-semibold text-gray-700 text-lg">{market}</span>
           </div>
         ))}
       </div>
       
-      <!-- Delivery Options -->
-      <div class="flex flex-wrap justify-center gap-4 lg:gap-8 text-gray-600">
-        <div class="flex items-center">
-          <svg class="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Delivery Features -->
+      <div class="flex flex-wrap justify-center gap-6 lg:gap-10 text-gray-600">
+        <div class="flex items-center gap-3 bg-gray-50 rounded-full px-6 py-3">
+          <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
           </svg>
-          Full truck loads
+          <span class="font-medium">Full truck loads</span>
         </div>
-        <div class="flex items-center">
-          <svg class="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="flex items-center gap-3 bg-gray-50 rounded-full px-6 py-3">
+          <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
           </svg>
-          Mixed loads
+          <span class="font-medium">Mixed loads</span>
         </div>
-        <div class="flex items-center">
-          <svg class="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="flex items-center gap-3 bg-gray-50 rounded-full px-6 py-3">
+          <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
           </svg>
-          Day-to-day delivery
+          <span class="font-medium">Day-to-day delivery</span>
         </div>
-        <div class="flex items-center">
-          <svg class="w-5 h-5 mr-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="flex items-center gap-3 bg-gray-50 rounded-full px-6 py-3">
+          <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
           </svg>
-          Flexible scheduling
+          <span class="font-medium">Flexible scheduling</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact CTA Section -->
-  <section class="bg-primary-700 py-16 lg:py-20">
-    <div class="max-w-screen-xl mx-auto px-4">
+  <section class="bg-primary-800 py-24 lg:py-32 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10">
+        <TreeIcon class="text-white" size={200} />
+      </div>
+      <div class="absolute bottom-10 right-10">
+        <TreeIcon class="text-white" size={150} />
+      </div>
+      <div class="absolute top-1/2 left-1/3">
+        <GreeneryIcon class="text-white" size={100} />
+      </div>
+    </div>
+    
+    <div class="max-w-screen-xl mx-auto px-4 relative">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+        <span class="inline-block text-primary-300 font-semibold text-sm uppercase tracking-wider mb-4">Get Started</span>
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
           Ready to discuss your requirements?
         </h2>
-        <p class="text-lg text-primary-100 mb-8">
+        <p class="text-xl text-primary-200 mb-10">
           Whether you need 1,000 trees or 50,000+, we're ready to help.
           Call us directly or request a quote online.
         </p>
         
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
           <a 
             href={`tel:${BUSINESS_INFO.phoneRaw}`}
-            class="inline-flex items-center px-6 py-3 bg-white text-primary-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+            class="inline-flex items-center px-8 py-4 bg-white text-primary-700 font-semibold rounded-xl hover:bg-gray-100 transition-colors text-lg"
           >
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
             </svg>
             {BUSINESS_INFO.phoneDisplay}
           </a>
-          <span class="text-primary-200">or</span>
+          <span class="text-primary-400 text-lg">or</span>
           <a 
-            href={`mailto:${BUSINESS_INFO.email}`}
-            class="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-700 transition-colors"
+            href="/contact"
+            class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-primary-700 transition-colors text-lg"
           >
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            Get a Quote Online
+            <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
-            {BUSINESS_INFO.email}
           </a>
         </div>
         
-        <a 
-          href="/contact" 
-          class="inline-flex items-center text-white font-medium hover:text-primary-200 transition-colors"
-        >
-          Get a Quote Online
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </a>
+        <p class="text-primary-300 text-sm">
+          Response within 24 hours. Usually same business day.
+        </p>
       </div>
     </div>
   </section>

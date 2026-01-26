@@ -1,0 +1,60 @@
+---
+interface Props {
+  class?: string
+  size?: number
+}
+
+const { class: className = '', size = 24 } = Astro.props
+---
+
+<svg 
+  class={className}
+  width={size} 
+  height={size} 
+  viewBox="0 0 48 48" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Main branch -->
+  <path 
+    d="M24 44V20" 
+    stroke="currentColor" 
+    stroke-width="3" 
+    stroke-linecap="round"
+    opacity="0.6"
+  />
+  <!-- Left branches -->
+  <path 
+    d="M24 36c-8-2-12-8-14-12 4 2 10 4 14 4" 
+    fill="currentColor" 
+    opacity="0.85"
+  />
+  <path 
+    d="M24 28c-6-1-10-6-12-10 3 2 8 3 12 3" 
+    fill="currentColor" 
+    opacity="0.9"
+  />
+  <path 
+    d="M24 20c-4-1-7-4-8-7 2 1 5 2 8 2" 
+    fill="currentColor" 
+    opacity="0.95"
+  />
+  <!-- Right branches -->
+  <path 
+    d="M24 36c8-2 12-8 14-12-4 2-10 4-14 4" 
+    fill="currentColor" 
+    opacity="0.85"
+  />
+  <path 
+    d="M24 28c6-1 10-6 12-10-3 2-8 3-12 3" 
+    fill="currentColor" 
+    opacity="0.9"
+  />
+  <path 
+    d="M24 20c4-1 7-4 8-7-2 1-5 2-8 2" 
+    fill="currentColor" 
+    opacity="0.95"
+  />
+  <!-- Top -->
+  <circle cx="24" cy="12" r="4" fill="currentColor"/>
+</svg>
