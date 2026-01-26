@@ -1,0 +1,230 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Counter from '../components/Counter.tsx'
+import ScrollReveal from '../components/ScrollReveal.tsx'
+import { BUSINESS_INFO } from '../constants/business'
+---
+
+<Layout title="Premium Danish Christmas Trees - Wholesale Trading Since 1976">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600 overflow-hidden">
+    <!-- Decorative blobs -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" style="animation-delay: 2s;"></div>
+    
+    <div class="relative py-16 px-4 mx-auto max-w-screen-xl text-center lg:py-24 lg:px-12">
+      <!-- Badge -->
+      <div class="inline-flex items-center py-1 px-4 mb-7 text-sm text-white bg-white/20 backdrop-blur-sm rounded-full">
+        <span class="text-xs bg-white/30 rounded-full px-3 py-1 mr-3">New</span>
+        <span class="font-medium">Back under founder's leadership</span>
+      </div>
+      
+      <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+        Premium Danish<br class="hidden lg:inline" />
+        <span class="text-white/90">Christmas Trees</span><br class="hidden lg:inline" />
+        Since 1976
+      </h1>
+      
+      <p class="mb-8 text-lg font-normal text-white/90 lg:text-xl sm:px-16 xl:px-48">
+        Teglgaard Wood is your trusted wholesale partner for premium Danish Christmas trees. 
+        With {BUSINESS_INFO.yearsFounded}+ years of trading expertise, we connect Europe's finest 
+        retailers with Denmark's best growers.
+      </p>
+      
+      <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+        <a href={`tel:${BUSINESS_INFO.phoneRaw}`} class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-primary-700 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 transition-all">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+          Call: {BUSINESS_INFO.phoneDisplay}
+        </a>
+        <a href="/contact" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-white hover:text-primary-700 focus:ring-4 focus:ring-gray-300 transition-all">
+          Get Quote
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+      
+      <!-- Trust Indicators -->
+      <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-white/90">
+        <div class="flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+          </svg>
+          <span class="text-sm">Est. {BUSINESS_INFO.founded}</span>
+        </div>
+        <div class="flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </svg>
+          <span class="text-sm">100% Danish Quality</span>
+        </div>
+        <div class="flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+          </svg>
+          <span class="text-sm">Europe-wide Delivery</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Wave Separator -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg class="w-full h-12 lg:h-20 text-white" preserveAspectRatio="none" viewBox="0 0 1440 74" fill="currentColor">
+        <path d="M0,32 C120,64 240,0 360,32 C480,64 600,0 720,32 C840,64 960,0 1080,32 C1200,64 1320,0 1440,32 L1440,74 L0,74 Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="bg-white">
+    <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+      <div class="grid max-w-screen-lg gap-8 mx-auto lg:grid-cols-3">
+        <div class="flex flex-col items-center justify-center text-center">
+          <div class="flex justify-center items-center mb-4 w-16 h-16 rounded-full bg-primary-100">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <dt class="mb-2 text-3xl md:text-4xl font-extrabold text-gray-900">
+            <Counter client:visible target={BUSINESS_INFO.yearsFounded} suffix="+" />
+          </dt>
+          <dd class="font-medium text-gray-600">Years of Trading Excellence</dd>
+        </div>
+        <div class="flex flex-col items-center justify-center text-center">
+          <div class="flex justify-center items-center mb-4 w-16 h-16 rounded-full bg-primary-100">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <dt class="mb-2 text-3xl md:text-4xl font-extrabold text-gray-900">B2B</dt>
+          <dd class="font-medium text-gray-600">Wholesale Trading Experts</dd>
+        </div>
+        <div class="flex flex-col items-center justify-center text-center">
+          <div class="flex justify-center items-center mb-4 w-16 h-16 rounded-full bg-primary-100">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+            </svg>
+          </div>
+          <dt class="mb-2 text-3xl md:text-4xl font-extrabold text-gray-900">
+            <Counter client:visible target={100} suffix="%" />
+          </dt>
+          <dd class="font-medium text-gray-600">Danish Quality Trees</dd>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="bg-gray-50">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
+          Your Wholesale Trading Partner
+        </h2>
+        <p class="font-normal text-gray-600 sm:text-xl">
+          We source premium Christmas trees from certified Danish growers and coordinate 
+          seamless delivery across Europe. Pure wholesale, no retail.
+        </p>
+      </div>
+
+      <div class="space-y-8 md:grid md:grid-cols-3 md:gap-8 md:space-y-0">
+        <ScrollReveal client:visible delay={0}>
+          <div class="p-8 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-primary-100 lg:h-16 lg:w-16">
+              <svg class="w-6 h-6 text-primary-600 lg:w-8 lg:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold text-gray-900">Expert Sourcing</h3>
+            <p class="text-gray-600">We carefully select the finest Christmas trees from Denmark's most trusted growers, ensuring consistent quality for your customers.</p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal client:visible delay={100}>
+          <div class="p-8 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-primary-100 lg:h-16 lg:w-16">
+              <svg class="w-6 h-6 text-primary-600 lg:w-8 lg:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold text-gray-900">Quality Grading</h3>
+            <p class="text-gray-600">Every tree is professionally graded and prepared to meet the highest standards. We handle netting and palletizing for easy handling.</p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal client:visible delay={200}>
+          <div class="p-8 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="flex justify-center items-center mb-4 w-12 h-12 rounded-full bg-primary-100 lg:h-16 lg:w-16">
+              <svg class="w-6 h-6 text-primary-600 lg:w-8 lg:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold text-gray-900">Seamless Logistics</h3>
+            <p class="text-gray-600">From coordination with growers to delivery at your location, we manage the entire supply chain for reliable, timely delivery.</p>
+          </div>
+        </ScrollReveal>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Section -->
+  <section class="bg-white">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <div class="max-w-screen-lg mx-auto text-center">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
+          Back Under Founder's Leadership
+        </h2>
+        <p class="mb-4 text-gray-600 sm:text-lg">
+          After {BUSINESS_INFO.yearsFounded} years in the Christmas tree industry, {BUSINESS_INFO.ceo} has returned 
+          to lead Teglgaard Wood with the same passion and dedication that built this company.
+        </p>
+        <blockquote class="mt-8 p-6 bg-gray-50 rounded-lg border-l-4 border-primary-600">
+          <p class="text-lg italic text-gray-700">
+            "We're not just traders - we're partners in your success. Our deep relationships with 
+            Danish growers and understanding of European markets ensure you get the finest trees, 
+            delivered on time, every season."
+          </p>
+          <footer class="mt-4">
+            <p class="font-semibold text-gray-900">{BUSINESS_INFO.ceo}</p>
+            <p class="text-sm text-gray-600">Founder & CEO, {BUSINESS_INFO.name}</p>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-r from-primary-600 to-primary-700">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+      <div class="mx-auto max-w-screen-sm text-center">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
+          Ready to Order for the Season?
+        </h2>
+        <p class="mb-6 font-normal text-primary-100 md:text-lg">
+          Contact us today to discuss your wholesale Christmas tree needs. 
+          We're here to ensure your success this season.
+        </p>
+        <a href={`tel:${BUSINESS_INFO.phoneRaw}`} class="inline-flex items-center text-primary-700 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-6 py-3 text-center transition-all">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+          Call Now: {BUSINESS_INFO.phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance, 30px));
+    transition: opacity var(--reveal-duration, 800ms) ease-out, transform var(--reveal-duration, 800ms) ease-out;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

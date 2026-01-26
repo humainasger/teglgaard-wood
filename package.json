@@ -1,0 +1,24 @@
+{
+  "name": "teglgaard-wood",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "pnpm run --parallel --filter './apps/*' dev",
+    "dev:web": "pnpm --filter @teglgaard/web dev",
+    "dev:ops": "pnpm --filter @teglgaard/ops dev",
+    "build": "pnpm run --filter './apps/*' build",
+    "build:web": "pnpm --filter @teglgaard/web build",
+    "preview": "pnpm run --parallel --filter './apps/*' preview",
+    "clean": "rm -rf node_modules apps/*/node_modules packages/*/node_modules",
+    "typecheck": "pnpm run --parallel typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.4"
+}
