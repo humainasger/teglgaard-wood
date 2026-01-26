@@ -5,6 +5,15 @@ import { ProcessSteps } from '../components/motion/ProcessSteps'
 import { CapabilitiesGrid } from '../components/motion/CapabilitiesGrid'
 
 const markets = BUSINESS_INFO.primaryMarkets
+
+const countryFlags: Record<string, string> = {
+  'Germany': '🇩🇪',
+  'France': '🇫🇷',
+  'United Kingdom': '🇬🇧',
+  'Netherlands': '🇳🇱',
+  'Belgium': '🇧🇪',
+  'Denmark': '🇩🇰'
+}
 ---
 
 <Layout 
@@ -150,25 +159,15 @@ const markets = BUSINESS_INFO.primaryMarkets
         <!-- Country cards -->
         <div class="relative">
           <div class="grid grid-cols-2 gap-4">
-            {markets.map((market, index) => {
-              const flags: Record<string, string> = {
-                'Germany': '🇩🇪',
-                'France': '🇫🇷',
-                'United Kingdom': '🇬🇧',
-                'Netherlands': '🇳🇱',
-                'Belgium': '🇧🇪',
-                'Denmark': '🇩🇰'
-              }
-              return (
-                <div 
-                  class="group bg-white rounded-2xl p-6 shadow-soft hover:shadow-soft-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
-                  style={`animation: fadeInUp 0.5s ease-out ${index * 0.1}s both`}
-                >
-                  <span class="text-4xl mb-3 block">{flags[market]}</span>
-                  <span class="font-semibold text-gray-900">{market}</span>
-                </div>
-              )
-            })}
+            {markets.map((market, index) => (
+              <div 
+                class="group bg-white rounded-2xl p-6 shadow-soft hover:shadow-soft-xl transition-all duration-300 hover:-translate-y-1 cursor-default"
+                style={`animation: fadeInUp 0.5s ease-out ${index * 0.1}s both`}
+              >
+                <span class="text-4xl mb-3 block">{countryFlags[market]}</span>
+                <span class="font-semibold text-gray-900">{market}</span>
+              </div>
+            ))}
           </div>
           
           <!-- Decorative element -->
