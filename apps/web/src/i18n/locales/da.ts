@@ -103,6 +103,50 @@ export const da = {
       subtitle: 'Uanset om du har brug for 1.000 træer eller 50.000+, er vi klar til at hjælpe. Ring direkte eller anmod om tilbud online.',
       button: 'Få tilbud online',
     },
+    trust: {
+      certified: {
+        title: 'Certificeret kvalitet',
+        subtitle: 'Professionel sorteringsstandard',
+      },
+      european: {
+        title: 'Europæisk levering',
+        subtitle: '6+ markeder i Europa',
+      },
+      established: {
+        title: 'Grundlagt 1976',
+        subtitle: '50 år i branchen',
+      },
+      ownProduction: {
+        title: 'Egen produktion',
+        subtitle: 'Team i Danmark, 150+ sæsonarbejdere',
+      },
+    },
+    approach: {
+      label: 'Vores tilgang',
+      title: 'Bygget til det lange spil',
+      subtitle: 'Vi sælger ikke bare træer. Vi bygger forsyningskæder, du kan stole på, sæson efter sæson.',
+      quality: {
+        title: 'Kvalitet uden kompromis',
+        description: 'Hvert træ håndgraderes af vores produktionsteam i Danmark. Premium, A-kvalitet og Standard - klart defineret, konsekvent leveret.',
+        point1: 'Håndgraderet af erfaret team',
+        point2: 'Tre kvalitetstrin, transparent sortering',
+        point3: 'Friskhed garanteret til levering',
+      },
+      supplyChain: {
+        title: 'Fuld kontrol over forsyningskæden',
+        description: 'Fra frø til butik. Vi styrer egen produktion og arbejder med et pålideligt netværk af dyrkere i Europa.',
+        point1: 'Egne plantager og partnerdyrkere',
+        point2: 'Nettet, palleteret, klar til salg',
+        point3: 'Fuld sporbarhed på hver ordre',
+      },
+      partnership: {
+        title: 'Skræddersyet til din forretning',
+        description: 'Havecenter, supermarkedskæde eller distributør - vi tilpasser vores service til jeres måde at arbejde på.',
+        point1: 'Fleksible ordrestørrelser og tidsplaner',
+        point2: 'Private label og specialsortering',
+        point3: 'Dedikeret kontaktperson',
+      },
+    },
   },
   about: {
     hero: {

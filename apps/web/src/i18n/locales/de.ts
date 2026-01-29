@@ -103,6 +103,50 @@ export const de = {
       subtitle: 'Ob Sie 1.000 Bäume oder 50.000+ benötigen, wir sind bereit zu helfen. Rufen Sie uns direkt an oder fordern Sie online ein Angebot an.',
       button: 'Online Angebot erhalten',
     },
+    trust: {
+      certified: {
+        title: 'Zertifizierte Qualität',
+        subtitle: 'Professionelle Sortierungsstandards',
+      },
+      european: {
+        title: 'Europaweite Lieferung',
+        subtitle: '6+ Märkte in Europa',
+      },
+      established: {
+        title: 'Gegründet 1976',
+        subtitle: '50 Jahre Branchenerfahrung',
+      },
+      ownProduction: {
+        title: 'Eigene Produktion',
+        subtitle: 'Team in Dänemark, 150+ Saisonkräfte',
+      },
+    },
+    approach: {
+      label: 'Unser Ansatz',
+      title: 'Auf Langfristigkeit gebaut',
+      subtitle: 'Wir verkaufen nicht nur Bäume. Wir bauen Lieferketten, auf die Sie sich verlassen können - Saison für Saison.',
+      quality: {
+        title: 'Qualität ohne Kompromisse',
+        description: 'Jeder Baum wird von unserem Produktionsteam in Dänemark von Hand sortiert. Premium, A-Qualität und Standard - klar definiert, zuverlässig geliefert.',
+        point1: 'Handsortierung durch erfahrenes Team',
+        point2: 'Drei Qualitätsstufen, transparente Sortierung',
+        point3: 'Frische garantiert bis zur Lieferung',
+      },
+      supplyChain: {
+        title: 'Volle Kontrolle der Lieferkette',
+        description: 'Vom Saatgut bis zum Verkaufsraum. Wir steuern die eigene Produktion und arbeiten mit einem bewährten Netzwerk europäischer Erzeuger.',
+        point1: 'Eigene Plantagen und Partnererzeuger',
+        point2: 'Genetzt, palettiert, verkaufsfertig',
+        point3: 'Volle Rückverfolgbarkeit bei jeder Bestellung',
+      },
+      partnership: {
+        title: 'Auf Ihr Geschäft zugeschnitten',
+        description: 'Gartencenter, Supermarktkette oder Großhändler - wir passen unseren Service an Ihre Arbeitsweise an.',
+        point1: 'Flexible Bestellmengen und Zeitpläne',
+        point2: 'Eigenmarke und Spezialsortierung',
+        point3: 'Persönlicher Ansprechpartner',
+      },
+    },
   },
   about: {
     hero: {

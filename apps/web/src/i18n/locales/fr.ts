@@ -103,6 +103,50 @@ export const fr = {
       subtitle: 'Que vous ayez besoin de 1 000 arbres ou de 50 000+, nous sommes prêts à vous aider. Appelez-nous directement ou demandez un devis en ligne.',
       button: 'Obtenir un devis en ligne',
     },
+    trust: {
+      certified: {
+        title: 'Qualité certifiée',
+        subtitle: 'Standards de tri professionnels',
+      },
+      european: {
+        title: 'Livraison européenne',
+        subtitle: '6+ marchés en Europe',
+      },
+      established: {
+        title: 'Fondée en 1976',
+        subtitle: '50 ans dans le secteur',
+      },
+      ownProduction: {
+        title: 'Production propre',
+        subtitle: 'Équipe au Danemark, 150+ saisonniers',
+      },
+    },
+    approach: {
+      label: 'Notre approche',
+      title: 'Construite pour le long terme',
+      subtitle: 'Nous ne vendons pas seulement des arbres. Nous construisons des chaînes d\'approvisionnement fiables, saison après saison.',
+      quality: {
+        title: 'Qualité sans compromis',
+        description: 'Chaque arbre est trié à la main par notre équipe de production au Danemark. Premium, Grade A et Standard - clairement défini, livré de manière constante.',
+        point1: 'Tri manuel par une équipe expérimentée',
+        point2: 'Trois niveaux de qualité, tri transparent',
+        point3: 'Fraîcheur garantie à la livraison',
+      },
+      supplyChain: {
+        title: 'Contrôle total de la chaîne',
+        description: 'De la graine au magasin. Nous gérons notre propre production et travaillons avec un réseau fiable de producteurs européens.',
+        point1: 'Plantations propres et producteurs partenaires',
+        point2: 'Filetés, palettisés, prêts à vendre',
+        point3: 'Traçabilité complète sur chaque commande',
+      },
+      partnership: {
+        title: 'Adapté à votre activité',
+        description: 'Jardinerie, chaîne de supermarchés ou distributeur - nous adaptons notre service à votre façon de travailler.',
+        point1: 'Tailles de commande et calendriers flexibles',
+        point2: 'Marque privée et tri personnalisé',
+        point3: 'Gestionnaire de compte dédié',
+      },
+    },
   },
   about: {
     hero: {

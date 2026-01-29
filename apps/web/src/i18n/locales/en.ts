@@ -103,6 +103,50 @@ export const en = {
       subtitle: 'Whether you need 1,000 trees or 50,000+, we\'re ready to help. Call us directly or request a quote online.',
       button: 'Get a Quote Online',
     },
+    trust: {
+      certified: {
+        title: 'Certified Quality',
+        subtitle: 'Professional grading standards',
+      },
+      european: {
+        title: 'European Delivery',
+        subtitle: '6+ markets across Europe',
+      },
+      established: {
+        title: 'Established 1976',
+        subtitle: '50 years in the industry',
+      },
+      ownProduction: {
+        title: 'Own Production',
+        subtitle: 'Team in Denmark, 150+ seasonal workers',
+      },
+    },
+    approach: {
+      label: 'Our Approach',
+      title: 'Built for the long game',
+      subtitle: 'We don\'t just sell trees. We build supply chains you can count on, season after season.',
+      quality: {
+        title: 'Quality Without Compromise',
+        description: 'Every tree is hand-graded by our production team in Denmark. Premium, A-grade, and Standard - clearly defined, consistently delivered.',
+        point1: 'Hand-graded by experienced team',
+        point2: 'Three quality tiers, transparent sorting',
+        point3: 'Freshness guaranteed to delivery',
+      },
+      supplyChain: {
+        title: 'Full Supply Chain Control',
+        description: 'From seed to storefront. We manage our own production and work with a trusted network of growers across Europe.',
+        point1: 'Own plantations and partner growers',
+        point2: 'Netted, palletized, ready to sell',
+        point3: 'Full traceability on every order',
+      },
+      partnership: {
+        title: 'Tailored to Your Business',
+        description: 'Garden center, supermarket chain, or distributor - we adapt our service to how you work, not the other way around.',
+        point1: 'Flexible order sizes and schedules',
+        point2: 'Private label and custom grading',
+        point3: 'Dedicated account management',
+      },
+    },
   },
   about: {
     hero: {
