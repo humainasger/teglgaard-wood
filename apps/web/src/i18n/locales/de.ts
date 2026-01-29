@@ -19,6 +19,7 @@ export const de = {
     contact: 'Kontakt',
     christmasTrees: 'Weihnachtsbäume',
     greenery: 'Dekorationsgrün',
+    language: 'Sprache',
   },
   header: {
     topBar: {

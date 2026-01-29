@@ -19,6 +19,7 @@ export const da = {
     contact: 'Kontakt',
     christmasTrees: 'Juletræer',
     greenery: 'Dekoration',
+    language: 'Sprog',
   },
   header: {
     topBar: {

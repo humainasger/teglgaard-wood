@@ -7,10 +7,24 @@ import QualityIcon from './icons/QualityIcon.astro'
 import NetworkIcon from './icons/NetworkIcon.astro'
 import TeamIcon from './icons/TeamIcon.astro'
 import LanguageSwitcher from './LanguageSwitcher.astro'
+import FlagGB from './icons/flags/FlagGB.astro'
+import FlagDK from './icons/flags/FlagDK.astro'
+import FlagDE from './icons/flags/FlagDE.astro'
+import FlagFR from './icons/flags/FlagFR.astro'
 import { getLanguageFromURL, t, getLocalizedPath } from '../i18n'
+import type { Locale } from '../i18n'
 
 const currentPath = Astro.url.pathname;
 const lang = getLanguageFromURL(Astro.url);
+const basePath = currentPath.replace(/^\/(da|de|fr)/, '') || '/';
+
+const languages = [
+  { code: 'en' as Locale, shortName: 'EN' },
+  { code: 'da' as Locale, shortName: 'DA' },
+  { code: 'de' as Locale, shortName: 'DE' },
+  { code: 'fr' as Locale, shortName: 'FR' },
+];
+const currentLang = lang;
 ---
 
 <header class="bg-white sticky top-0 z-50 shadow-sm">
@@ -293,19 +307,27 @@ const lang = getLanguageFromURL(Astro.url);
           </a>
         </div>
 
-        <!-- Mobile Menu Button -->
-        <button
-          type="button"
-          class="lg:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100"
-          id="mobile-menu-button"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-        >
-          <span class="sr-only">Open menu</span>
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
+        <!-- Mobile: CTA + Menu Button -->
+        <div class="flex lg:hidden items-center gap-2">
+          <a
+            href={getLocalizedPath('/contact', lang)}
+            class="px-4 py-2 bg-primary-600 text-white text-sm font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+          >
+            {t('header.cta', lang)}
+          </a>
+          <button
+            type="button"
+            class="p-2 rounded-lg text-gray-500 hover:bg-gray-100"
+            id="mobile-menu-button"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open menu</span>
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -329,6 +351,35 @@ const lang = getLanguageFromURL(Astro.url);
       <a href={getLocalizedPath('/solutions', lang)} class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">{t('nav.solutions', lang)}</a>
       <a href={getLocalizedPath('/about', lang)} class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">{t('nav.about', lang)}</a>
       <a href={getLocalizedPath('/contact', lang)} class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">{t('nav.contact', lang)}</a>
+
+      <!-- Language Switcher -->
+      <div class="pt-4 border-t border-gray-100">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-3">{t('nav.language', lang)}</p>
+        <div class="flex gap-2 px-3">
+          {languages.map((langItem) => {
+            const isActive = langItem.code === currentLang;
+            const localizedPath = getLocalizedPath(basePath, langItem.code);
+            return (
+              <a
+                href={localizedPath}
+                class={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  isActive
+                    ? 'bg-primary-50 text-primary-700 ring-1 ring-primary-200'
+                    : 'text-gray-600 hover:bg-gray-50'
+                }`}
+              >
+                <span class="flex items-center">
+                  {langItem.code === 'en' && <FlagGB size={20} />}
+                  {langItem.code === 'da' && <FlagDK size={20} />}
+                  {langItem.code === 'de' && <FlagDE size={20} />}
+                  {langItem.code === 'fr' && <FlagFR size={20} />}
+                </span>
+                <span>{langItem.shortName}</span>
+              </a>
+            );
+          })}
+        </div>
+      </div>
 
       <div class="pt-4 border-t border-gray-100">
         <a href={getLocalizedPath('/contact', lang)} class="block w-full px-4 py-3 bg-primary-600 text-white font-semibold rounded-lg text-center hover:bg-primary-700">
