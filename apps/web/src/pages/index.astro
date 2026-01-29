@@ -8,6 +8,7 @@ import TruckIcon from '../components/icons/TruckIcon.astro'
 import QualityIcon from '../components/icons/QualityIcon.astro'
 import NetworkIcon from '../components/icons/NetworkIcon.astro'
 import TeamIcon from '../components/icons/TeamIcon.astro'
+import CountryFlag from '../components/CountryFlag.astro'
 import { BUSINESS_INFO } from '../constants/business'
 import { t } from '../i18n'
 import type { Locale } from '../i18n'
@@ -305,13 +306,8 @@ const markets = BUSINESS_INFO.primaryMarkets
       <div class="flex flex-wrap justify-center gap-4 lg:gap-6 mb-16">
         {markets.map((market) => (
           <div class="flex items-center bg-gray-50 rounded-xl px-6 py-4 hover:bg-primary-50 transition-colors">
-            <span class="text-4xl mr-4">
-              {market === 'Germany' && '🇩🇪'}
-              {market === 'France' && '🇫🇷'}
-              {market === 'United Kingdom' && '🇬🇧'}
-              {market === 'Netherlands' && '🇳🇱'}
-              {market === 'Belgium' && '🇧🇪'}
-              {market === 'Denmark' && '🇩🇰'}
+            <span class="mr-4">
+              <CountryFlag country={market} size={40} />
             </span>
             <span class="font-semibold text-gray-700 text-lg">{market}</span>
           </div>

@@ -1,0 +1,23 @@
+---
+import FlagGB from './icons/flags/FlagGB.astro';
+import FlagDK from './icons/flags/FlagDK.astro';
+import FlagDE from './icons/flags/FlagDE.astro';
+import FlagFR from './icons/flags/FlagFR.astro';
+import FlagNL from './icons/flags/FlagNL.astro';
+import FlagBE from './icons/flags/FlagBE.astro';
+
+interface Props {
+  country: string;
+  size?: number;
+  class?: string;
+}
+
+const { country, size = 40, class: className = '' } = Astro.props;
+---
+
+{country === 'Germany' && <FlagDE size={size} class={className} />}
+{country === 'France' && <FlagFR size={size} class={className} />}
+{country === 'United Kingdom' && <FlagGB size={size} class={className} />}
+{country === 'Netherlands' && <FlagNL size={size} class={className} />}
+{country === 'Belgium' && <FlagBE size={size} class={className} />}
+{country === 'Denmark' && <FlagDK size={size} class={className} />}
