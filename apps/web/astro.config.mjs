@@ -7,6 +7,13 @@ export default defineConfig({
   site: 'https://teglgaardwood.dk',
   output: 'static',
   integrations: [react()],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'da', 'de', 'fr'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   vite: {
     plugins: [tailwindcss()]
   },

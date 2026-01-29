@@ -6,8 +6,11 @@ import TruckIcon from './icons/TruckIcon.astro'
 import QualityIcon from './icons/QualityIcon.astro'
 import NetworkIcon from './icons/NetworkIcon.astro'
 import TeamIcon from './icons/TeamIcon.astro'
+import LanguageSwitcher from './LanguageSwitcher.astro'
+import { getLanguageFromURL, t, getLocalizedPath } from '../i18n'
 
 const currentPath = Astro.url.pathname;
+const lang = getLanguageFromURL(Astro.url);
 ---
 
 <header class="bg-white sticky top-0 z-50 shadow-sm">
@@ -19,16 +22,16 @@ const currentPath = Astro.url.pathname;
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
-          50 Years of Excellence
+          {t('header.topBar.yearsExcellence', lang)}
         </span>
         <span class="hidden md:inline-flex items-center gap-2 text-primary-200">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064"></path>
           </svg>
-          Delivering across Europe
+          {t('header.topBar.deliveringEurope', lang)}
         </span>
       </div>
-      <a 
+      <a
         href={`tel:${BUSINESS_INFO.phoneRaw}`}
         class="flex items-center gap-2 font-medium hover:text-white text-white"
       >
@@ -45,7 +48,7 @@ const currentPath = Astro.url.pathname;
     <div class="max-w-screen-xl mx-auto px-4">
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-3">
+        <a href={getLocalizedPath('/', lang)} class="flex items-center gap-3">
           <div class="flex items-center gap-2">
             <TreeIcon class="text-primary-600" size={36} />
             <div>
@@ -61,49 +64,49 @@ const currentPath = Astro.url.pathname;
         <div class="hidden lg:flex items-center gap-1">
           <!-- Products Mega Menu -->
           <div class="relative group">
-            <button 
+            <button
               class={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
-                currentPath.startsWith('/products')
+                currentPath.includes('/products')
                   ? 'text-primary-700 bg-primary-50'
                   : 'text-gray-700 hover:text-primary-700 hover:bg-gray-50'
               }`}
             >
-              Products
+              {t('nav.products', lang)}
               <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
-            
+
             <!-- Mega Menu Dropdown -->
             <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 w-[600px]">
                 <div class="grid grid-cols-2 gap-6">
                   <!-- Christmas Trees -->
-                  <a href="/products/christmas-trees" class="group/item flex gap-4 p-4 rounded-xl hover:bg-primary-50 transition-colors">
+                  <a href={getLocalizedPath('/products/christmas-trees', lang)} class="group/item flex gap-4 p-4 rounded-xl hover:bg-primary-50 transition-colors">
                     <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover/item:bg-primary-200 transition-colors">
                       <TreeIcon class="text-primary-600" size={32} />
                     </div>
                     <div>
-                      <h4 class="font-semibold text-gray-900 mb-1">Christmas Trees</h4>
-                      <p class="text-sm text-gray-500">Nordmann, Noble, Fraser, Spruce. All sizes 1m-7m+.</p>
+                      <h4 class="font-semibold text-gray-900 mb-1">{t('header.megaMenu.products.christmasTrees.title', lang)}</h4>
+                      <p class="text-sm text-gray-500">{t('header.megaMenu.products.christmasTrees.description', lang)}</p>
                     </div>
                   </a>
-                  
+
                   <!-- Greenery -->
-                  <a href="/products/greenery" class="group/item flex gap-4 p-4 rounded-xl hover:bg-primary-50 transition-colors">
+                  <a href={getLocalizedPath('/products/greenery', lang)} class="group/item flex gap-4 p-4 rounded-xl hover:bg-primary-50 transition-colors">
                     <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover/item:bg-primary-200 transition-colors">
                       <GreeneryIcon class="text-primary-600" size={32} />
                     </div>
                     <div>
-                      <h4 class="font-semibold text-gray-900 mb-1">Decorative Greenery</h4>
-                      <p class="text-sm text-gray-500">Noble fir, Nordmann, Cypress. Fresh-cut branches.</p>
+                      <h4 class="font-semibold text-gray-900 mb-1">{t('header.megaMenu.products.greenery.title', lang)}</h4>
+                      <p class="text-sm text-gray-500">{t('header.megaMenu.products.greenery.description', lang)}</p>
                     </div>
                   </a>
                 </div>
-                
+
                 <div class="mt-4 pt-4 border-t border-gray-100">
-                  <a href="/products" class="flex items-center justify-between text-sm text-primary-600 font-medium hover:text-primary-700">
-                    View all products
+                  <a href={getLocalizedPath('/products', lang)} class="flex items-center justify-between text-sm text-primary-600 font-medium hover:text-primary-700">
+                    {t('common.viewAll', lang)} {t('nav.products', lang).toLowerCase()}
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
@@ -115,56 +118,56 @@ const currentPath = Astro.url.pathname;
 
           <!-- Services Mega Menu -->
           <div class="relative group">
-            <button 
+            <button
               class={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
-                currentPath === '/services'
+                currentPath.includes('/services')
                   ? 'text-primary-700 bg-primary-50'
                   : 'text-gray-700 hover:text-primary-700 hover:bg-gray-50'
               }`}
             >
-              Services
+              {t('nav.services', lang)}
               <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
-            
+
             <!-- Services Mega Menu Dropdown -->
             <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 w-[700px]">
                 <div class="grid grid-cols-3 gap-4">
-                  <a href="/services#capabilities" class="group/item flex flex-col items-center text-center p-4 rounded-xl hover:bg-primary-50 transition-colors">
+                  <a href={getLocalizedPath('/services#capabilities', lang)} class="group/item flex flex-col items-center text-center p-4 rounded-xl hover:bg-primary-50 transition-colors">
                     <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-3 group-hover/item:bg-primary-200 transition-colors">
                       <NetworkIcon class="text-primary-600" size={28} />
                     </div>
-                    <h4 class="font-semibold text-gray-900 text-sm mb-1">Sourcing Network</h4>
-                    <p class="text-xs text-gray-500">European growers</p>
+                    <h4 class="font-semibold text-gray-900 text-sm mb-1">{t('services.capabilities.sourcing.title', lang)}</h4>
+                    <p class="text-xs text-gray-500">{t('services.capabilities.sourcing.description', lang)}</p>
                   </a>
-                  
-                  <a href="/services#capabilities" class="group/item flex flex-col items-center text-center p-4 rounded-xl hover:bg-primary-50 transition-colors">
+
+                  <a href={getLocalizedPath('/services#capabilities', lang)} class="group/item flex flex-col items-center text-center p-4 rounded-xl hover:bg-primary-50 transition-colors">
                     <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-3 group-hover/item:bg-primary-200 transition-colors">
                       <TeamIcon class="text-primary-600" size={28} />
                     </div>
-                    <h4 class="font-semibold text-gray-900 text-sm mb-1">Production Team</h4>
-                    <p class="text-xs text-gray-500">On-site in Denmark</p>
+                    <h4 class="font-semibold text-gray-900 text-sm mb-1">{t('services.capabilities.support.title', lang)}</h4>
+                    <p class="text-xs text-gray-500">{t('services.capabilities.support.description', lang)}</p>
                   </a>
-                  
-                  <a href="/services#capabilities" class="group/item flex flex-col items-center text-center p-4 rounded-xl hover:bg-primary-50 transition-colors">
+
+                  <a href={getLocalizedPath('/services#capabilities', lang)} class="group/item flex flex-col items-center text-center p-4 rounded-xl hover:bg-primary-50 transition-colors">
                     <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-3 group-hover/item:bg-primary-200 transition-colors">
                       <QualityIcon class="text-primary-600" size={28} />
                     </div>
-                    <h4 class="font-semibold text-gray-900 text-sm mb-1">Quality Control</h4>
-                    <p class="text-xs text-gray-500">Professional grading</p>
+                    <h4 class="font-semibold text-gray-900 text-sm mb-1">{t('services.capabilities.quality.title', lang)}</h4>
+                    <p class="text-xs text-gray-500">{t('services.capabilities.quality.description', lang)}</p>
                   </a>
-                  
-                  <a href="/services#logistics" class="group/item flex flex-col items-center text-center p-4 rounded-xl hover:bg-primary-50 transition-colors">
+
+                  <a href={getLocalizedPath('/services#logistics', lang)} class="group/item flex flex-col items-center text-center p-4 rounded-xl hover:bg-primary-50 transition-colors">
                     <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-3 group-hover/item:bg-primary-200 transition-colors">
                       <TruckIcon class="text-primary-600" size={28} />
                     </div>
-                    <h4 class="font-semibold text-gray-900 text-sm mb-1">Logistics</h4>
-                    <p class="text-xs text-gray-500">Europe-wide delivery</p>
+                    <h4 class="font-semibold text-gray-900 text-sm mb-1">{t('services.capabilities.logistics.title', lang)}</h4>
+                    <p class="text-xs text-gray-500">{t('services.capabilities.logistics.description', lang)}</p>
                   </a>
-                  
-                  <a href="/services#private-label" class="group/item flex flex-col items-center text-center p-4 rounded-xl hover:bg-primary-50 transition-colors">
+
+                  <a href={getLocalizedPath('/services#private-label', lang)} class="group/item flex flex-col items-center text-center p-4 rounded-xl hover:bg-primary-50 transition-colors">
                     <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-3 group-hover/item:bg-primary-200 transition-colors">
                       <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
@@ -173,8 +176,8 @@ const currentPath = Astro.url.pathname;
                     <h4 class="font-semibold text-gray-900 text-sm mb-1">Private Label</h4>
                     <p class="text-xs text-gray-500">Your brand, our trees</p>
                   </a>
-                  
-                  <a href="/services" class="group/item flex flex-col items-center text-center p-4 rounded-xl hover:bg-primary-50 transition-colors">
+
+                  <a href={getLocalizedPath('/services', lang)} class="group/item flex flex-col items-center text-center p-4 rounded-xl hover:bg-primary-50 transition-colors">
                     <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-3 group-hover/item:bg-primary-200 transition-colors">
                       <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -184,9 +187,9 @@ const currentPath = Astro.url.pathname;
                     <p class="text-xs text-gray-500">Custom solutions</p>
                   </a>
                 </div>
-                
+
                 <div class="mt-4 pt-4 border-t border-gray-100">
-                  <a href="/services" class="flex items-center justify-between text-sm text-primary-600 font-medium hover:text-primary-700">
+                  <a href={getLocalizedPath('/services', lang)} class="flex items-center justify-between text-sm text-primary-600 font-medium hover:text-primary-700">
                     How we work
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -199,52 +202,52 @@ const currentPath = Astro.url.pathname;
 
           <!-- Solutions -->
           <div class="relative group">
-            <button 
+            <button
               class={`flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors ${
-                currentPath.startsWith('/solutions')
+                currentPath.includes('/solutions')
                   ? 'text-primary-700 bg-primary-50'
                   : 'text-gray-700 hover:text-primary-700 hover:bg-gray-50'
               }`}
             >
-              Solutions
+              {t('nav.solutions', lang)}
               <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
-            
+
             <!-- Solutions Mega Menu Dropdown -->
             <div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 w-[500px]">
                 <div class="grid grid-cols-2 gap-3">
-                  <a href="/solutions#garden-centers" class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
+                  <a href={getLocalizedPath('/solutions#garden-centers', lang)} class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
                     <h4 class="font-semibold text-gray-900 text-sm">Garden Centers</h4>
                     <p class="text-xs text-gray-500">Premium trees for retail</p>
                   </a>
-                  <a href="/solutions#supermarkets" class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
+                  <a href={getLocalizedPath('/solutions#supermarkets', lang)} class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
                     <h4 class="font-semibold text-gray-900 text-sm">Supermarket Chains</h4>
                     <p class="text-xs text-gray-500">High volume, multi-location</p>
                   </a>
-                  <a href="/solutions#distributors" class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
+                  <a href={getLocalizedPath('/solutions#distributors', lang)} class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
                     <h4 class="font-semibold text-gray-900 text-sm">Distributors</h4>
                     <p class="text-xs text-gray-500">Wholesale partnerships</p>
                   </a>
-                  <a href="/solutions#nurseries" class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
+                  <a href={getLocalizedPath('/solutions#nurseries', lang)} class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
                     <h4 class="font-semibold text-gray-900 text-sm">Plant Schools</h4>
                     <p class="text-xs text-gray-500">Industry professionals</p>
                   </a>
-                  <a href="/solutions#ecommerce" class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
+                  <a href={getLocalizedPath('/solutions#ecommerce', lang)} class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
                     <h4 class="font-semibold text-gray-900 text-sm">E-Commerce</h4>
                     <p class="text-xs text-gray-500">Online retailers</p>
                   </a>
-                  <a href="/solutions#commercial" class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
+                  <a href={getLocalizedPath('/solutions#commercial', lang)} class="p-3 rounded-xl hover:bg-primary-50 transition-colors">
                     <h4 class="font-semibold text-gray-900 text-sm">Commercial</h4>
                     <p class="text-xs text-gray-500">Hotels, events, corporate</p>
                   </a>
                 </div>
-                
+
                 <div class="mt-4 pt-4 border-t border-gray-100">
-                  <a href="/solutions" class="flex items-center justify-between text-sm text-primary-600 font-medium hover:text-primary-700">
-                    View all solutions
+                  <a href={getLocalizedPath('/solutions', lang)} class="flex items-center justify-between text-sm text-primary-600 font-medium hover:text-primary-700">
+                    {t('common.viewAll', lang)} {t('nav.solutions', lang).toLowerCase()}
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                     </svg>
@@ -255,43 +258,44 @@ const currentPath = Astro.url.pathname;
           </div>
 
           <!-- About -->
-          <a 
-            href="/about" 
+          <a
+            href={getLocalizedPath('/about', lang)}
             class={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              currentPath === '/about'
+              currentPath.includes('/about')
                 ? 'text-primary-700 bg-primary-50'
                 : 'text-gray-700 hover:text-primary-700 hover:bg-gray-50'
             }`}
           >
-            About
+            {t('nav.about', lang)}
           </a>
 
           <!-- Contact -->
-          <a 
-            href="/contact" 
+          <a
+            href={getLocalizedPath('/contact', lang)}
             class={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              currentPath === '/contact'
+              currentPath.includes('/contact')
                 ? 'text-primary-700 bg-primary-50'
                 : 'text-gray-700 hover:text-primary-700 hover:bg-gray-50'
             }`}
           >
-            Contact
+            {t('nav.contact', lang)}
           </a>
         </div>
 
-        <!-- CTA -->
+        <!-- CTA + Language Switcher -->
         <div class="hidden lg:flex items-center gap-3">
-          <a 
-            href="/contact" 
+          <LanguageSwitcher />
+          <a
+            href={getLocalizedPath('/contact', lang)}
             class="px-5 py-2.5 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
           >
-            Get a Quote
+            {t('header.cta', lang)}
           </a>
         </div>
 
         <!-- Mobile Menu Button -->
-        <button 
-          type="button" 
+        <button
+          type="button"
           class="lg:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100"
           id="mobile-menu-button"
           aria-controls="mobile-menu"
@@ -310,25 +314,25 @@ const currentPath = Astro.url.pathname;
   <div class="hidden lg:hidden bg-white border-b border-gray-200" id="mobile-menu">
     <div class="px-4 py-4 space-y-2">
       <div class="border-b border-gray-100 pb-4 mb-4">
-        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Products</p>
-        <a href="/products/christmas-trees" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">{t('nav.products', lang)}</p>
+        <a href={getLocalizedPath('/products/christmas-trees', lang)} class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
           <TreeIcon class="text-primary-600" size={24} />
-          <span class="font-medium text-gray-900">Christmas Trees</span>
+          <span class="font-medium text-gray-900">{t('nav.christmasTrees', lang)}</span>
         </a>
-        <a href="/products/greenery" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
+        <a href={getLocalizedPath('/products/greenery', lang)} class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50">
           <GreeneryIcon class="text-primary-600" size={24} />
-          <span class="font-medium text-gray-900">Decorative Greenery</span>
+          <span class="font-medium text-gray-900">{t('nav.greenery', lang)}</span>
         </a>
       </div>
-      
-      <a href="/services" class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">Services</a>
-      <a href="/solutions" class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">Solutions</a>
-      <a href="/about" class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">About</a>
-      <a href="/contact" class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">Contact</a>
-      
+
+      <a href={getLocalizedPath('/services', lang)} class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">{t('nav.services', lang)}</a>
+      <a href={getLocalizedPath('/solutions', lang)} class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">{t('nav.solutions', lang)}</a>
+      <a href={getLocalizedPath('/about', lang)} class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">{t('nav.about', lang)}</a>
+      <a href={getLocalizedPath('/contact', lang)} class="block px-3 py-2 rounded-lg font-medium text-gray-900 hover:bg-gray-50">{t('nav.contact', lang)}</a>
+
       <div class="pt-4 border-t border-gray-100">
-        <a href="/contact" class="block w-full px-4 py-3 bg-primary-600 text-white font-semibold rounded-lg text-center hover:bg-primary-700">
-          Get a Quote
+        <a href={getLocalizedPath('/contact', lang)} class="block w-full px-4 py-3 bg-primary-600 text-white font-semibold rounded-lg text-center hover:bg-primary-700">
+          {t('header.cta', lang)}
         </a>
       </div>
     </div>
@@ -338,7 +342,7 @@ const currentPath = Astro.url.pathname;
 <script>
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
-  
+
   mobileMenuButton?.addEventListener('click', () => {
     const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
     mobileMenuButton.setAttribute('aria-expanded', (!isExpanded).toString());

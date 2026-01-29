@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import { BUSINESS_INFO } from '../constants/business'
-import { ProcessStepsScroll } from '../components/motion/ProcessStepsScroll'
-import { CapabilitiesGrid } from '../components/motion/CapabilitiesGrid'
-import { t } from '../i18n'
-import type { Locale } from '../i18n'
+import Layout from '../../layouts/Layout.astro'
+import { BUSINESS_INFO } from '../../constants/business'
+import { ProcessStepsScroll } from '../../components/motion/ProcessStepsScroll'
+import { CapabilitiesGrid } from '../../components/motion/CapabilitiesGrid'
+import { t } from '../../i18n'
+import type { Locale } from '../../i18n'
 
-const lang: Locale = 'en'
+const lang: Locale = 'da'
 const markets = BUSINESS_INFO.primaryMarkets
 
 const countryFlags: Record<string, string> = {

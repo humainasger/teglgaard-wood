@@ -1,18 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Counter from '../components/Counter.tsx'
-import ScrollReveal from '../components/ScrollReveal.tsx'
-import TreeIcon from '../components/icons/TreeIcon.astro'
-import GreeneryIcon from '../components/icons/GreeneryIcon.astro'
-import TruckIcon from '../components/icons/TruckIcon.astro'
-import QualityIcon from '../components/icons/QualityIcon.astro'
-import NetworkIcon from '../components/icons/NetworkIcon.astro'
-import TeamIcon from '../components/icons/TeamIcon.astro'
-import { BUSINESS_INFO } from '../constants/business'
-import { t } from '../i18n'
-import type { Locale } from '../i18n'
+import Layout from '../../layouts/Layout.astro'
+import Counter from '../../components/Counter.tsx'
+import ScrollReveal from '../../components/ScrollReveal.tsx'
+import TreeIcon from '../../components/icons/TreeIcon.astro'
+import GreeneryIcon from '../../components/icons/GreeneryIcon.astro'
+import TruckIcon from '../../components/icons/TruckIcon.astro'
+import QualityIcon from '../../components/icons/QualityIcon.astro'
+import NetworkIcon from '../../components/icons/NetworkIcon.astro'
+import TeamIcon from '../../components/icons/TeamIcon.astro'
+import { BUSINESS_INFO } from '../../constants/business'
+import { t } from '../../i18n'
+import type { Locale } from '../../i18n'
 
-const lang: Locale = 'en'
+const lang: Locale = 'da'
 const markets = BUSINESS_INFO.primaryMarkets
 ---
 
@@ -20,26 +20,26 @@ const markets = BUSINESS_INFO.primaryMarkets
   <!-- Hero Section with Video Background -->
   <section class="relative min-h-[90vh] flex items-center overflow-hidden">
     <!-- Video Background -->
-    <video 
-      autoplay 
-      muted 
-      loop 
+    <video
+      autoplay
+      muted
+      loop
       playsinline
       poster="/images/hero-fallback.jpg"
       class="absolute inset-0 w-full h-full object-cover"
     >
       <source src="/videos/hero-trees.mp4" type="video/mp4" />
     </video>
-    
+
     <!-- Fallback Image (shows if video fails or for static export) -->
-    <div 
+    <div
       class="absolute inset-0 bg-cover bg-center"
       style="background-image: url('/images/hero-fallback.jpg');"
     ></div>
-    
+
     <!-- Overlay -->
     <div class="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-800/80 to-primary-700/70"></div>
-    
+
     <!-- Content -->
     <div class="relative max-w-screen-xl mx-auto px-4 py-20 lg:py-32 w-full">
       <div class="max-w-3xl">
@@ -47,7 +47,7 @@ const markets = BUSINESS_INFO.primaryMarkets
           <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
           <span class="text-white/90 text-sm font-medium">{t('header.topBar.yearsExcellence', lang)}</span>
         </div>
-        
+
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8">
           {t('home.hero.title', lang).split('\n')[0]}<br />
           {t('home.hero.title', lang).split('\n')[1]}<br />
@@ -57,10 +57,10 @@ const markets = BUSINESS_INFO.primaryMarkets
         <p class="text-xl lg:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed">
           {t('home.hero.subtitle', lang)}
         </p>
-        
+
         <div class="flex flex-col sm:flex-row gap-4 mb-16">
-          <a 
-            href="/products" 
+          <a
+            href="/da/products"
             class="inline-flex justify-center items-center px-8 py-4 bg-white text-primary-700 font-semibold rounded-xl hover:bg-gray-100 transition-all hover:shadow-lg text-lg"
           >
             {t('home.hero.cta', lang)}
@@ -69,13 +69,13 @@ const markets = BUSINESS_INFO.primaryMarkets
             </svg>
           </a>
           <a
-            href="/contact"
+            href="/da/contact"
             class="inline-flex justify-center items-center px-8 py-4 border-2 border-white/80 text-white font-semibold rounded-xl hover:bg-white hover:text-primary-700 transition-all text-lg"
           >
             {t('common.requestQuote', lang)}
           </a>
         </div>
-        
+
         <!-- Trust Stats -->
         <div class="flex flex-wrap gap-8 lg:gap-12">
           <div>
@@ -93,7 +93,7 @@ const markets = BUSINESS_INFO.primaryMarkets
         </div>
       </div>
     </div>
-    
+
     <!-- Scroll Indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,17 +112,17 @@ const markets = BUSINESS_INFO.primaryMarkets
           {t('home.products.subtitle', lang)}
         </p>
       </div>
-      
+
       <div class="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
         <!-- Christmas Trees Card -->
         <ScrollReveal client:visible delay={0}>
-          <a href="/products/christmas-trees" class="group block h-full">
+          <a href="/da/products/christmas-trees" class="group block h-full">
             <div class="relative bg-gray-50 rounded-3xl overflow-hidden h-full border border-gray-100 hover:border-primary-200 transition-all hover:shadow-2xl">
               <!-- Image Placeholder -->
               <div class="aspect-[4/3] bg-gradient-to-br from-primary-100 to-primary-50 flex items-center justify-center">
-                <img 
-                  src="/images/products-trees.jpg" 
-                  alt="Christmas Trees" 
+                <img
+                  src="/images/products-trees.jpg"
+                  alt="Christmas Trees"
                   class="w-full h-full object-cover"
                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                 />
@@ -130,7 +130,7 @@ const markets = BUSINESS_INFO.primaryMarkets
                   <TreeIcon class="text-primary-200" size={120} />
                 </div>
               </div>
-              
+
               <div class="p-8 lg:p-10">
                 <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary-700 transition-colors">
                   {t('home.products.christmasTrees.title', lang)}
@@ -171,13 +171,13 @@ const markets = BUSINESS_INFO.primaryMarkets
 
         <!-- Greenery Card -->
         <ScrollReveal client:visible delay={150}>
-          <a href="/products/greenery" class="group block h-full">
+          <a href="/da/products/greenery" class="group block h-full">
             <div class="relative bg-gray-50 rounded-3xl overflow-hidden h-full border border-gray-100 hover:border-primary-200 transition-all hover:shadow-2xl">
               <!-- Image Placeholder -->
               <div class="aspect-[4/3] bg-gradient-to-br from-primary-100 to-primary-50 flex items-center justify-center">
-                <img 
-                  src="/images/products-greenery.jpg" 
-                  alt="Decorative Greenery" 
+                <img
+                  src="/images/products-greenery.jpg"
+                  alt="Decorative Greenery"
                   class="w-full h-full object-cover"
                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                 />
@@ -185,7 +185,7 @@ const markets = BUSINESS_INFO.primaryMarkets
                   <GreeneryIcon class="text-primary-200" size={120} />
                 </div>
               </div>
-              
+
               <div class="p-8 lg:p-10">
                 <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary-700 transition-colors">
                   {t('home.products.greenery.title', lang)}
@@ -237,7 +237,7 @@ const markets = BUSINESS_INFO.primaryMarkets
           {t('home.whyUs.subtitle', lang)}
         </p>
       </div>
-      
+
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
         <ScrollReveal client:visible delay={0}>
           <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-shadow">
@@ -300,7 +300,7 @@ const markets = BUSINESS_INFO.primaryMarkets
           {t('home.deliveryCoverage.subtitle', lang)}
         </p>
       </div>
-      
+
       <!-- Market Flags -->
       <div class="flex flex-wrap justify-center gap-4 lg:gap-6 mb-16">
         {markets.map((market) => (
@@ -317,7 +317,7 @@ const markets = BUSINESS_INFO.primaryMarkets
           </div>
         ))}
       </div>
-      
+
       <!-- Delivery Features -->
       <div class="flex flex-wrap justify-center gap-6 lg:gap-10 text-gray-600">
         <div class="flex items-center gap-3 bg-gray-50 rounded-full px-6 py-3">
@@ -362,7 +362,7 @@ const markets = BUSINESS_INFO.primaryMarkets
         <GreeneryIcon class="text-white" size={100} />
       </div>
     </div>
-    
+
     <div class="max-w-screen-xl mx-auto px-4 relative">
       <div class="max-w-3xl mx-auto text-center">
         <span class="inline-block text-primary-300 font-semibold text-sm uppercase tracking-wider mb-4">{t('common.getStarted', lang)}</span>
@@ -372,9 +372,9 @@ const markets = BUSINESS_INFO.primaryMarkets
         <p class="text-xl text-primary-200 mb-10">
           {t('home.cta.subtitle', lang)}
         </p>
-        
+
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-          <a 
+          <a
             href={`tel:${BUSINESS_INFO.phoneRaw}`}
             class="inline-flex items-center px-8 py-4 bg-white text-primary-700 font-semibold rounded-xl hover:bg-gray-100 transition-colors text-lg"
           >
@@ -385,7 +385,7 @@ const markets = BUSINESS_INFO.primaryMarkets
           </a>
           <span class="text-primary-400 text-lg">or</span>
           <a
-            href="/contact"
+            href="/da/contact"
             class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-primary-700 transition-colors text-lg"
           >
             {t('home.cta.button', lang)}
@@ -394,7 +394,7 @@ const markets = BUSINESS_INFO.primaryMarkets
             </svg>
           </a>
         </div>
-        
+
         <p class="text-primary-300 text-sm">
           Response within 24 hours. Usually same business day.
         </p>

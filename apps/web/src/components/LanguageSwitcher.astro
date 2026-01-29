@@ -1,0 +1,91 @@
+---
+import { getLanguageFromURL, getLocalizedPath, type Locale } from '../i18n';
+
+const currentLang = getLanguageFromURL(Astro.url);
+const currentPath = Astro.url.pathname;
+
+// Remove language prefix to get base path
+const basePath = currentPath.replace(/^\/(da|de|fr)/, '') || '/';
+
+const languages = [
+  { code: 'en' as Locale, flag: '🇬🇧', name: 'English' },
+  { code: 'da' as Locale, flag: '🇩🇰', name: 'Dansk' },
+  { code: 'de' as Locale, flag: '🇩🇪', name: 'Deutsch' },
+  { code: 'fr' as Locale, flag: '🇫🇷', name: 'Français' },
+];
+
+const currentLanguage = languages.find(lang => lang.code === currentLang) || languages[0];
+---
+
+<div class="relative group">
+  <button
+    type="button"
+    class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+    id="language-switcher-button"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <span class="text-lg">{currentLanguage.flag}</span>
+    <span class="hidden sm:inline text-sm font-medium">{currentLanguage.name}</span>
+    <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+
+  <!-- Dropdown Menu -->
+  <div
+    class="absolute right-0 top-full mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+    id="language-menu"
+  >
+    <div class="py-2">
+      {languages.map((lang) => {
+        const isActive = lang.code === currentLang;
+        const localizedPath = getLocalizedPath(basePath, lang.code);
+
+        return (
+          <a
+            href={localizedPath}
+            class={`flex items-center gap-3 px-4 py-2 text-sm transition-colors ${
+              isActive
+                ? 'bg-primary-50 text-primary-700 font-medium'
+                : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            <span class="text-xl">{lang.flag}</span>
+            <span>{lang.name}</span>
+            {isActive && (
+              <svg class="w-4 h-4 ml-auto text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            )}
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</div>
+
+<script>
+  // Enhance with click toggle for mobile/touch devices
+  const button = document.getElementById('language-switcher-button');
+  const menu = document.getElementById('language-menu');
+
+  button?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', (!isExpanded).toString());
+    menu?.classList.toggle('opacity-100');
+    menu?.classList.toggle('visible');
+    menu?.classList.toggle('opacity-0');
+    menu?.classList.toggle('invisible');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', () => {
+    if (button && menu) {
+      button.setAttribute('aria-expanded', 'false');
+      menu.classList.add('opacity-0', 'invisible');
+      menu.classList.remove('opacity-100', 'visible');
+    }
+  });
+</script>

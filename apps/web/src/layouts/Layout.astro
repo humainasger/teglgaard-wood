@@ -4,6 +4,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import { ViewTransitions } from 'astro:transitions'
 import { BUSINESS_INFO, SEO_DEFAULTS } from '../constants/business'
+import { getLanguageFromURL, getAlternateLinks, getCanonicalURL } from '../i18n'
 
 export interface Props {
   title: string
@@ -12,18 +13,20 @@ export interface Props {
   image?: string
 }
 
-const { 
-  title, 
+const {
+  title,
   description = SEO_DEFAULTS.description,
   keywords = SEO_DEFAULTS.keywords,
   image = SEO_DEFAULTS.image
 } = Astro.props
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const lang = getLanguageFromURL(Astro.url)
+const canonicalURL = getCanonicalURL(Astro.url.pathname, Astro.site?.toString())
+const alternateLinks = getAlternateLinks(Astro.url.pathname, lang)
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -31,6 +34,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
+
+    <!-- Alternate language links for SEO -->
+    {alternateLinks.map(({ lang: altLang, url }) => (
+      <link rel="alternate" hreflang={altLang} href={new URL(url, Astro.site)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
