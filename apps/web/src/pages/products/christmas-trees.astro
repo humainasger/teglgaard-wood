@@ -72,13 +72,13 @@ const speciesImageMap: Record<string, string> = {
           return (
             <div class="bg-gray-50 rounded-xl overflow-hidden">
               <!-- Species Image -->
-              <div class="aspect-[4/3] relative overflow-hidden">
+              <div class="aspect-[3/4] relative overflow-hidden bg-gray-100">
                 <picture>
                   <source srcset={`/images/species/${imageName}.webp`} type="image/webp" />
                   <img 
                     src={`/images/species/${imageName}.jpg`}
                     alt={species.name}
-                    class="w-full h-full object-cover"
+                    class="w-full h-full object-contain"
                     loading="lazy"
                   />
                 </picture>
