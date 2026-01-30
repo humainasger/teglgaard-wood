@@ -4,9 +4,10 @@ interface Props {
   class?: string;
 }
 const { size = 24, class: className = '' } = Astro.props;
+const h = Math.round(size * 2 / 3);
 ---
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2.6" width={size} height={size * 2.6 / 3} class:list={['inline-block rounded-sm', className]}>
-  <rect width="1" height="2.6" fill="#000"/>
-  <rect x="1" width="1" height="2.6" fill="#FAE042"/>
-  <rect x="2" width="1" height="2.6" fill="#ED2939"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width={size} height={h} class:list={['inline-block rounded-sm', className]}>
+  <rect width="1" height="2" fill="#000"/>
+  <rect x="1" width="1" height="2" fill="#FAE042"/>
+  <rect x="2" width="1" height="2" fill="#ED2939"/>
 </svg>

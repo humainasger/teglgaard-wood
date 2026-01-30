@@ -4,14 +4,15 @@ interface Props {
   class?: string;
 }
 const { size = 24, class: className = '' } = Astro.props;
+const h = Math.round(size * 2 / 3);
 ---
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width={size} height={size / 2} class:list={['inline-block rounded-sm', className]}>
-  <clipPath id="gb-clip"><rect width="60" height="30"/></clipPath>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width={size} height={h} class:list={['inline-block rounded-sm', className]}>
+  <clipPath id="gb-clip"><rect width="60" height="40"/></clipPath>
   <g clip-path="url(#gb-clip)">
-    <rect width="60" height="30" fill="#012169"/>
-    <path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/>
-    <path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#gb-clip)"/>
-    <path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/>
-    <path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/>
+    <rect width="60" height="40" fill="#012169"/>
+    <path d="M0,0 60,40 M60,0 0,40" stroke="#fff" stroke-width="8"/>
+    <path d="M0,0 60,40 M60,0 0,40" stroke="#C8102E" stroke-width="5" clip-path="url(#gb-clip)"/>
+    <path d="M30,0v40M0,20h60" stroke="#fff" stroke-width="13"/>
+    <path d="M30,0v40M0,20h60" stroke="#C8102E" stroke-width="8"/>
   </g>
 </svg>
