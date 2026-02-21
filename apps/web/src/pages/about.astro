@@ -5,7 +5,6 @@ import { t } from '../i18n'
 import type { Locale } from '../i18n'
 
 const lang: Locale = 'en'
-const { leadership } = BUSINESS_INFO
 ---
 
 <Layout
@@ -120,74 +119,6 @@ const { leadership } = BUSINESS_INFO
     </div>
   </section>
 
-  <!-- Leadership Team -->
-  <section class="bg-white py-16 lg:py-24" id="leadership">
-    <div class="max-w-screen-xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">{t('about.leadership.title', lang)}</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          {t('about.leadership.role', lang)}
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-        <!-- Michael -->
-        <div class="text-center">
-          <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
-            <picture>
-              <source srcset="/images/team/michael.webp" type="image/webp" />
-              <img 
-                src="/images/team/michael.jpg" 
-                alt={leadership.michael.name}
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </picture>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-1">{leadership.michael.name}</h3>
-          <p class="text-primary-600 font-medium mb-3">{leadership.michael.role}</p>
-          <p class="text-gray-600 text-sm">{leadership.michael.description}</p>
-        </div>
-
-        <!-- Rasmus -->
-        <div class="text-center">
-          <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
-            <picture>
-              <source srcset="/images/team/rasmus.webp" type="image/webp" />
-              <img 
-                src="/images/team/rasmus.jpg" 
-                alt={leadership.rasmus.name}
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </picture>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-1">{leadership.rasmus.name}</h3>
-          <p class="text-primary-600 font-medium mb-3">{leadership.rasmus.role}</p>
-          <p class="text-gray-600 text-sm">{leadership.rasmus.description}</p>
-        </div>
-
-        <!-- Asger -->
-        <div class="text-center">
-          <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
-            <picture>
-              <source srcset="/images/team/asger.webp" type="image/webp" />
-              <img 
-                src="/images/team/asger.jpg" 
-                alt={leadership.asger.name}
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </picture>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-1">{leadership.asger.name}</h3>
-          <p class="text-primary-600 font-medium mb-3">{leadership.asger.role}</p>
-          <p class="text-gray-600 text-sm">{leadership.asger.description}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Company Facts -->
   <section class="bg-gray-50 py-16 lg:py-24">
     <div class="max-w-screen-xl mx-auto px-4">
@@ -220,7 +151,7 @@ const { leadership } = BUSINESS_INFO
             </div>
             <div class="flex justify-between items-center px-6 py-4">
               <span class="text-gray-600">Annual Volume</span>
-              <span class="font-medium text-gray-900">{BUSINESS_INFO.stats.treesAnnually} trees</span>
+              <span class="font-medium text-gray-900">{BUSINESS_INFO.stats.treesAnnually}</span>
             </div>
           </div>
         </div>

@@ -140,7 +140,7 @@ const markets = BUSINESS_INFO.primaryMarkets
               { label: 'Full Truck Loads', desc: 'Maximum efficiency' },
               { label: 'Mixed Loads', desc: 'Trees + greenery' },
               { label: 'Day-to-Day', desc: 'Flexible scheduling' },
-              { label: 'Drop Shipping', desc: 'Multiple locations' },
+              { label: 'Flexible Delivery', desc: 'Multiple locations' },
             ].map((item) => (
               <div class="bg-white rounded-xl p-5 shadow-soft">
                 <h4 class="font-semibold text-gray-900 mb-1">{item.label}</h4>
@@ -180,8 +180,8 @@ const markets = BUSINESS_INFO.primaryMarkets
       <div class="grid md:grid-cols-4 gap-8 text-center">
         {[
           { value: '50+', label: 'Years Experience' },
-          { value: '250K', label: 'Trees Annually' },
-          { value: '10M+', label: 'Trees Exported' },
+          { value: '1m-7m+', label: 'Tree Sizes Available' },
+          { value: 'Millions', label: 'Trees Exported' },
           { value: '6', label: 'European Markets' },
         ].map((stat, index) => (
           <div 

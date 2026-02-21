@@ -36,10 +36,10 @@ export const BUSINESS_INFO = {
   
   // Key stats
   stats: {
-    treesAnnually: '250.000',
+    treesAnnually: 'Tens of thousands',
     yearsExperience: 50,
-    totalExported: '10+ million',
-    seasonalWorkers: '10-30',
+    totalExported: 'Millions',
+    seasonalWorkers: '20-30',
   },
   
   // Markets
@@ -56,7 +56,7 @@ export const SOCIAL_LINKS = {
 
 export const SEO_DEFAULTS = {
   title: 'Teglgaard Wood - Wholesale Christmas Trees & Decorative Greenery',
-  description: 'Professional Christmas tree and greenery sourcing partner. 250,000 trees annually. Production team in Denmark. European grower network. 50 years of expertise.',
+  description: 'Professional Christmas tree and greenery sourcing partner. Large-scale wholesale. Production team in Denmark. European grower network. 50 years of expertise.',
   keywords: 'wholesale Christmas trees, christmas tree supplier, nordmann fir wholesale, christmas tree exporter denmark, decorative greenery wholesale, noble fir greenery',
   image: '/images/og-image.jpg'
 } as const
@@ -132,7 +132,7 @@ export const SERVICES = {
   },
   production: {
     title: 'Full Production Team',
-    description: 'Experienced team on the ground in Denmark. 10-30 seasonal workers for grading, netting, and palletizing.',
+    description: 'Experienced team on the ground in Denmark. 20-30 seasonal workers for grading, netting, and palletizing.',
     icon: 'users',
   },
   quality: {

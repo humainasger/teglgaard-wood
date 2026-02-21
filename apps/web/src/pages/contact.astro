@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import ContactForm from '../components/ContactForm.tsx'
-import ContactTeam from '../components/ContactTeam.astro'
 import { BUSINESS_INFO } from '../constants/business'
 import { t } from '../i18n'
 import type { Locale } from '../i18n'
@@ -24,9 +23,6 @@ const lang: Locale = 'en'
       </div>
     </div>
   </section>
-
-  <!-- Talk to Us Directly - Gold Section -->
-  <ContactTeam variant="full" />
 
   <!-- Contact Info + Form -->
   <section class="bg-white py-16 lg:py-24">

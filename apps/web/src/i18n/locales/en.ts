@@ -3,7 +3,7 @@ import type { Translation } from './types';
 export const en = {
   common: {
     phone: '+45 40 73 70 78',
-    email: 'mt@teglgaardwood.dk',
+    email: 'info@teglgaardwood.dk',
     requestQuote: 'Request Quote',
     getStarted: 'Get Started',
     learnMore: 'Learn More',
@@ -41,7 +41,7 @@ export const en = {
     cta: 'Get a Quote',
   },
   footer: {
-    brandDescription: 'Your professional Christmas tree partner. 250,000 trees annually. Production team in Denmark. European grower network. 50 years of expertise.',
+    brandDescription: 'Your professional Christmas tree partner. Production team in Denmark. European grower network. 50 years of expertise.',
     products: 'Products',
     solutions: 'Solutions',
     company: 'Company',
@@ -54,7 +54,7 @@ export const en = {
   home: {
     hero: {
       title: 'Wholesale\nChristmas Trees\n& Greenery',
-      subtitle: '250,000 trees annually. Production team in Denmark. Delivering to retailers across Europe since 1976.',
+      subtitle: 'Premium wholesale Christmas trees and greenery. Production team in Denmark. Delivering to retailers across Europe since 1976.',
       cta: 'View Products',
     },
     products: {
@@ -74,7 +74,7 @@ export const en = {
       subtitle: 'Your professional sourcing partner with production capabilities and European reach.',
       quality: {
         title: 'Production Team',
-        description: 'Experienced team on the ground in Denmark. 150 seasonal workers for grading and preparation.',
+        description: 'Experienced team on the ground in Denmark. 20-30 seasonal workers for grading and preparation.',
       },
       heritage: {
         title: 'European Network',
@@ -86,7 +86,7 @@ export const en = {
       },
       expertise: {
         title: '50 Years Experience',
-        description: 'Since 1976. 10 million trees exported. Deep industry knowledge.',
+        description: 'Since 1976. Millions of trees exported. Deep industry knowledge.',
       },
     },
     deliveryCoverage: {
@@ -105,7 +105,7 @@ export const en = {
     },
     trust: {
       certified: {
-        title: 'Certified Quality',
+        title: 'Professional Quality',
         subtitle: 'Professional grading standards',
       },
       european: {
@@ -118,7 +118,7 @@ export const en = {
       },
       ownProduction: {
         title: 'Own Production',
-        subtitle: 'Team in Denmark, 150+ seasonal workers',
+        subtitle: 'Team in Denmark, 20-30 seasonal workers',
       },
     },
     approach: {
@@ -135,7 +135,7 @@ export const en = {
       supplyChain: {
         title: 'Full Supply Chain Control',
         description: 'From seed to storefront. We manage our own production and work with a trusted network of growers across Europe.',
-        point1: 'Own plantations and partner growers',
+        point1: 'Partner growers across Europe',
         point2: 'Netted, palletized, ready to sell',
         point3: 'Full traceability on every order',
       },
@@ -157,7 +157,7 @@ export const en = {
       title: 'Who We Are',
       paragraph1: 'Teglgaard Wood is more than a trading company. We\'re a professional sourcing partner with full production capabilities in Denmark and a network of trusted growers across Europe.',
       paragraph2: 'Founded in 1976, we\'ve spent 50 years building relationships with the best Christmas tree growers and developing the systems, team, and expertise to deliver consistent quality at scale.',
-      paragraph3: 'Today, we supply 250,000 trees annually to garden centers, supermarket chains, plant schools, and distributors across Germany, France, the UK, and broader Europe.',
+      paragraph3: 'Today, we supply tens of thousands of trees annually to garden centers, supermarket chains, nurseries, and distributors across Germany, France, the UK, and broader Europe.',
     },
     approach: {
       title: 'Our Approach',
@@ -187,7 +187,7 @@ export const en = {
     },
     milestone: {
       title: '50 Years in the Industry',
-      description: 'Half a century of building relationships, perfecting our craft, and delivering quality Christmas trees to retailers across Europe. Over 10 million trees exported.',
+      description: 'Half a century of building relationships, perfecting our craft, and delivering quality Christmas trees to retailers across Europe. Millions of trees delivered to retailers across Europe.',
     },
   },
   contact: {
@@ -216,7 +216,7 @@ export const en = {
       title: 'From Grower to Your Store',
       step1: {
         title: 'Sourcing',
-        description: 'We work with certified growers across Europe',
+        description: 'We work with trusted growers across Europe',
       },
       step2: {
         title: 'Grading',
@@ -269,7 +269,7 @@ export const en = {
   products: {
     hero: {
       title: 'Our Products',
-      subtitle: 'Premium Christmas trees and fresh decorative greenery for retailers across Europe. 250,000 trees annually, all quality grades, all sizes.',
+      subtitle: 'Premium Christmas trees and fresh decorative greenery for retailers across Europe. All quality grades, all sizes.',
     },
     christmasTrees: {
       title: 'Christmas Trees',
@@ -290,11 +290,12 @@ export const en = {
       },
       fraser: {
         name: 'Fraser Fir',
-        description: 'Classic Christmas tree. Dark green needles, strong branches, pleasant scent. Traditional North American favorite.',
+        description: 'Classic Christmas tree shape. Dark green needles, strong branches, pleasant scent. Available on request.',
       },
+      // Note: key is 'bluespruce' but this refers to Norway Spruce
       bluespruce: {
         name: 'Norway Spruce',
-        description: 'Traditional European choice. Classic conical shape, good needle retention, pleasant fragrance.',
+        description: 'Traditional European choice. Classic conical shape and pine fragrance. Popular for outdoor display and traditional markets.',
       },
     },
     greeneryTypes: {
@@ -448,7 +449,7 @@ export const en = {
         cta: 'Explore partnership',
       },
       nurseries: {
-        name: 'Plant Schools & Nurseries',
+        name: 'Nurseries',
         challenges: [
           'Technical specifications matter',
           'Quality consistency is non-negotiable',
@@ -457,7 +458,7 @@ export const en = {
         ],
         howWeHelp: [
           'Professional grading to your specifications',
-          'Direct relationships with certified growers',
+          'Direct relationships with trusted growers',
           'Flexible scheduling around your needs',
           'Technical support from people who understand',
         ],
@@ -473,7 +474,7 @@ export const en = {
         ],
         howWeHelp: [
           'Pre-graded inventory for online selection',
-          'Drop-ship capability to end consumers',
+          'Bulk preparation for your fulfillment workflow',
           'Quality guarantee on every tree',
           'Operational consulting from experience',
         ],
@@ -510,7 +511,7 @@ export const en = {
   seo: {
     home: {
       title: 'Wholesale Christmas Trees & Decorative Greenery',
-      description: 'Premium wholesale Christmas trees and greenery. 250,000 trees annually. Production team in Denmark. Delivering across Europe since 1976.',
+      description: 'Premium wholesale Christmas trees and greenery. Large-scale wholesale. Production team in Denmark. Delivering across Europe since 1976.',
     },
     about: {
       title: 'About Us - 50 Years in the Christmas Tree Industry',
