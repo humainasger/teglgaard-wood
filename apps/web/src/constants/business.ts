@@ -5,7 +5,7 @@ export const BUSINESS_INFO = {
   phone: '+45 40 73 70 78',
   phoneDisplay: '+45 40 73 70 78',
   phoneRaw: '+4540737078',
-  email: 'info@teglgaardwood.dk',
+  email: 'mt@teglgaardwood.dk',
   address: {
     street: 'Rugårdsvej 784',
     city: 'Morud',

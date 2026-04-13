@@ -3,7 +3,7 @@ import type { Translation } from './types';
 export const en = {
   common: {
     phone: '+45 40 73 70 78',
-    email: 'info@teglgaardwood.dk',
+    email: 'mt@teglgaardwood.dk',
     requestQuote: 'Request Quote',
     getStarted: 'Get Started',
     learnMore: 'Learn More',
