@@ -118,3 +118,14 @@ pnpm typecheck     # Check all packages
 
 - Obsidian Vault: `03 Areas/Teglgaard Wood/`
 - Contains board meeting notes, e-conomic migration docs, business context
+
+## Orca worktrees
+
+- Orca's repository base is `origin/main`. Use the persistent `main` checkout for
+  read-only checks that create no repository files.
+- If files will change, create one top-level Orca worktree for one bounded task.
+  Start from the repository base; use another branch only for deliberately stacked work.
+- Let `orca.yaml` finish dependency setup before starting Claude or Codex. `CLAUDE.md`
+  is canonical and `AGENTS.md` points to it for Codex.
+- Keep progress in the Orca worktree comment, review the diff there, and archive only
+  after the worktree is clean and its branch is integrated.

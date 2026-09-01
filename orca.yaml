@@ -1,0 +1,4 @@
+scripts:
+  setup: ./scripts/orca-setup.sh
+
+setupAgentStartupPolicy: wait-for-setup
