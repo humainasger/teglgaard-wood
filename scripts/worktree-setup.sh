@@ -8,4 +8,4 @@ cd "$workspace_root"
 echo "==> Installing pnpm dependencies"
 corepack pnpm install --frozen-lockfile
 
-echo "==> Orca worktree ready"
+echo "==> Worktree ready"
