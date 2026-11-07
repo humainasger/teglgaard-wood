@@ -116,8 +116,9 @@ pnpm typecheck     # Check all packages
 
 ## Related Documentation
 
-- Board meeting notes, e-conomic migration docs and business context: plain Markdown under
-  `/Users/humainasger/LocalDocuments/Teglgaard Wood/` on Asger's laptop (former vault, non-Git)
+- Board meeting notes, systems docs and business context: the Teglgaard Wood workspace at
+  `/Users/humainasger/LocalDocuments/projects/teglgaard-wood-workspace/` on Asger's laptop
+  (local Git, no remote); start with its `CLAUDE.md`
 
 ## Checkouts and branches
 
