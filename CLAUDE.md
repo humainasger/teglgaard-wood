@@ -116,8 +116,8 @@ pnpm typecheck     # Check all packages
 
 ## Related Documentation
 
-- Obsidian Vault: `03 Areas/Teglgaard Wood/`
-- Contains board meeting notes, e-conomic migration docs, business context
+- Board meeting notes, e-conomic migration docs and business context: plain Markdown under
+  `/Users/humainasger/LocalDocuments/Teglgaard Wood/` on Asger's laptop (former vault, non-Git)
 
 ## Checkouts and branches
 
